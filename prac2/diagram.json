@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "author": "Adelaide University",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-st-nucleo-c031c6",
+      "id": "nucleo",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledRed",
+      "top": -70,
+      "left": 310,
+      "attrs": { "color": "red", "label": "RED - PA5" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledYellow",
+      "top": 20,
+      "left": 310,
+      "attrs": { "color": "yellow", "label": "YELLOW - PA6" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledGreen",
+      "top": 110,
+      "left": 310,
+      "attrs": { "color": "green", "label": "GREEN - PA7" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rRed",
+      "top": -60,
+      "left": 220,
+      "rotate": 90,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rYellow",
+      "top": 30,
+      "left": 220,
+      "rotate": 90,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rGreen",
+      "top": 120,
+      "left": 220,
+      "rotate": 90,
+      "attrs": { "value": "330" }
+    }
+  ],
+  "connections": [
+    [ "nucleo:PA5", "rRed:1", "red", [] ],
+    [ "rRed:2", "ledRed:A", "red", [] ],
+    [ "ledRed:C", "nucleo:GND.1", "black", [] ],
+
+    [ "nucleo:PA6", "rYellow:1", "gold", [] ],
+    [ "rYellow:2", "ledYellow:A", "gold", [] ],
+    [ "ledYellow:C", "nucleo:GND.1", "black", [] ],
+
+    [ "nucleo:PA7", "rGreen:1", "green", [] ],
+    [ "rGreen:2", "ledGreen:A", "green", [] ],
+    [ "ledGreen:C", "nucleo:GND.1", "black", [] ]
+  ],
+  "dependencies": {},
+  "elf": "build/Debug/prac2.elf"
+}
