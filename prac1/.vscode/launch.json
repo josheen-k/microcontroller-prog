@@ -1,0 +1,16 @@
+{
+"version" : "0.2.0",
+"configurations":
+[
+{
+    "name": "Wokwi Debug", 
+    "type": "cppdbg",
+    "request": "launch",
+    "program": "/home/ash/Documents/micro/test/build/Debug/test.elf",
+    "cwd": "/home/ash/Documents/micro/test" ,
+    "MIMode": "gdb" ,
+    "miDebuggerPath": "/home/ash/Documents/micro/arm-none-eabi-gdb",
+    "miDebuggerServerAddress": "localhost:3333"
+}
+]
+}
