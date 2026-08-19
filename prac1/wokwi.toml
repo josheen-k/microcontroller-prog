@@ -1,4 +1,0 @@
-[wokwi]
-version = 1
-firmware = 'build/Release/prac1.elf'
-elf = 'build/Release/prac1.elf'
