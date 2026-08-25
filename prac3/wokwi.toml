@@ -1,0 +1,5 @@
+[wokwi]
+version = 1
+firmware = 'build/Debug/prac3.elf'
+elf = 'build/Debug/prac3.elf'
+gdbServerPort = 3333

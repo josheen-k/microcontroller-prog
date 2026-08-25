@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "author": "Seth N",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-st-nucleo-c031c6",
+      "id": "nucleo",
+      "top": -47.17,
+      "left": -173.78,
+      "attrs": {}
+    },
+    { "type": "wokwi-led", "id": "led1", "top": 44.4, "left": 205.4, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 80.75,
+      "left": 134.4,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-pushbutton-6mm",
+      "id": "btn1",
+      "top": 305,
+      "left": -76.8,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-analog-joystick",
+      "id": "joystick1",
+      "top": -221.4,
+      "left": -109.8,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "$serialMonitor:TX", "nucleo:PA3", "", [] ],
+    [ "$serialMonitor:RX", "nucleo:PA2", "", [] ],
+    [ "r1:1", "nucleo:GND.9", "green", [ "v0" ] ],
+    [ "r1:2", "led1:C", "green", [ "v0" ] ],
+    [ "joystick1:VCC", "nucleo:3V3.2", "red", [ "v0" ] ],
+    [ "joystick1:GND", "nucleo:GND.5", "black", [ "v0" ] ],
+    [ "joystick1:VERT", "nucleo:A1", "green", [ "v0" ] ],
+    [ "joystick1:HORZ", "nucleo:A0", "green", [ "v0" ] ],
+    [ "joystick1:SEL", "nucleo:PA6", "green", [ "v0" ] ],
+    [ "btn1:1.l", "nucleo:PB1", "green", [ "h0" ] ],
+    [ "btn1:2.l", "nucleo:GND.6", "green", [ "h-115.2", "v-153.2" ] ],
+    [ "led1:A", "nucleo:PB0.1", "green", [ "v0" ] ]
+  ],
+  "dependencies": {},
+  "elf": "build/Debug/prac3.elf"
+}
