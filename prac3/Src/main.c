@@ -58,19 +58,19 @@ static void Pin_Pull(GPIO_TypeDef *port, uint8_t pin, uint8_t pull) {
 }
 
 static uint8_t Pin_Read(GPIO_TypeDef *port, uint8_t pin) {
-    return (uint8_t)((port->IDR >> pin) & 1);
+    return (uint8_t)((port->IDR >> pin) & 1U);
 }
 
 static void Pin_Write(GPIO_TypeDef *port, uint8_t pin, PinState state){
     if (state==PIN_HIGH) {
-        port->ODR |= (1 << pin);
+        port->ODR |= (1U << pin);
     } else {
-        port->ODR &= ~(1 << pin);
+        port->ODR &= ~(1U << pin);
     }
 }
 
 static void Adc_Init(void) {
-    RCC->APBENR2 |= (1 << 20);
+    RCC->APBENR2 |= (1U << 20);
     ADC1->ISR |= ADC_ISR_ADRDY;
     ADC1->CR |= ADC_CR_ADEN;
 
@@ -78,7 +78,7 @@ static void Adc_Init(void) {
     }
 }
 
-static uint8_t Adc_Read(uint8_t channel) {
+static uint16_t Adc_Read(uint8_t channel) {
     ADC1->CHSELR = (1U << channel);
     ADC1->CR |= ADC_CR_ADSTART;
     while ((ADC1->ISR & ADC_ISR_EOC ) == 0) {
@@ -87,8 +87,7 @@ static uint8_t Adc_Read(uint8_t channel) {
 }
 
 // delay func
-static void delay(volatile uint32_t count)
-{
+static void delay(volatile uint32_t count) {
     while (count>0){
         __NOP();
         count--;
@@ -114,15 +113,14 @@ int main(void) {
 
     Adc_Init();
 
-    uint8_t horizontal;
-    uint8_t vertical;
+    uint16_t horizontal;
+    uint16_t vertical;
     uint32_t blink;
 
     while (1) {
         horizontal = Adc_Read(0);
         vertical = Adc_Read(1);
 
-        // turn ext led on if ext button reads high
         if (Pin_Read(GPIOB, 1U) == 0) {
             Pin_Write(GPIOB, 0U, PIN_HIGH);
 
@@ -130,20 +128,20 @@ int main(void) {
             Pin_Write(GPIOB, 0U, PIN_LOW);
         }
 
-        if (horizontal > 700) {
-            blink = 100000;
+        if (horizontal > 2600) {
+            blink = 3000000; // l (7 counts)
 
-        } else if (horizontal < 300) {
-            blink = 200000;
-            
-        } else if (vertical > 700) {
-            blink = 300000;
+        } else if (horizontal < 1500) {
+            blink = 2000000; // r (5 counts)
 
-        } else if (vertical < 300) {
-            blink = 400000;
+        } else if (vertical > 2600) {
+            blink = 1000000; // u (3 counts)
+
+        } else if (vertical < 1500) {
+            blink = 5000000; // d (10 counts)
 
         } else {
-            blink = 0;
+            blink = 0; // c
         }
 
         // led4 blink
@@ -152,10 +150,8 @@ int main(void) {
             delay(blink);
             Pin_Write(GPIOA, 5U, PIN_LOW);
             delay(blink);
-        }
 
-        //sel button
-        if (blink == 0) {
+        } else {
             if (Pin_Read(GPIOA, 6U) == 0) {
                 Pin_Write(GPIOA, 5U, PIN_HIGH);
             } else {
