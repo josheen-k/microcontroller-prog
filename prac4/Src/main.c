@@ -105,10 +105,10 @@ void Pin_AltFunc(GPIO_TypeDef *port, uint8_t pin, uint8_t af_number) {
   // AFR [0] handles pins 0 -7. AFR [1] handles pins 8 -15.
   // Each pin gets 4 bits to define its Alternate Function (0 to 15).
   if (pin < 8) {
-    port->AFR[0] &= ~(0 xFUL << (pin * 4));             //
+    port->AFR[0] &= ~(0xFUL << (pin * 4));             //
     port->AFR[0] |= ((uint32_t)af_number << (pin * 4)); //
   } else {
-    port->AFR[1] &= ~(0 xFUL << ((pin - 8) * 4));
+    port->AFR[1] &= ~(0xFUL << ((pin - 8) * 4));
     port->AFR[1] |= ((uint32_t)af_number << ((pin - 8) * 4));
   }
 }
@@ -123,8 +123,8 @@ void PWM_Init(void) {
   RCC->APBENR2 |= (1 << 11); 
 
   // 4. Configure Timer Timing ( Assuming 48 MHz default system clock )
-  TM1->PSC = 47; // Prescaler : we want 1 MHz
-  TM1->ARR = 19999; // Period : 20 ,000 ticks = 20
+  TIM1->PSC = 47; // Prescaler : we want 1 MHz
+  TIM1->ARR = 19999; // Period : 20 ,000 ticks = 20
 
   // 5. Configure PWM Mode 1 on Channel 1
   // Clear output compare mode bits , then set to PWM mode 1 (110)
@@ -136,8 +136,7 @@ void PWM_Init(void) {
   TIM1->CCER |= (1 << 0); 
 
   // 7. Main Output Enable ( for TIM1 )
-
-  __________________;
+  TIM1->BDTR |= (1<<15);
   // 8. Start the Timer
   TIM1->CR1 |= (1 << 0); 
 }
@@ -155,14 +154,17 @@ void EXTI0_1_IRQHandler() {
         in_motion = 1;
     }
     if ((EXTI->FPR1) & (1<<0)) {
-        EXTI->FRP1 |= (1 << 0);
+        EXTI->FPR1 |= (1 << 0);
         in_motion = 0;
     }
 }
 
-volatile uint16_t tick_ms = 0;
-void (void) { 
-    tick_ms++; 
+// delay func
+static void delay(volatile uint32_t count) {
+    while (count>0){
+        __NOP();
+        count--;
+    }
 }
 
 int main(void) {
@@ -177,30 +179,27 @@ int main(void) {
   NVIC_SetPriority(EXTI0_1_IRQn, 1);
   NVIC_EnableIRQ(EXTI0_1_IRQn);
 
-  uint8_t door_open = 0;
-  uint16_t last_movement = 0;
+//   uint8_t door_open = 0;
+//   uint16_t last_movement_ms = 0;
 
   Pin_Write(GPIOA, 2, 1);
   Pin_Write(GPIOA, 3, 0);
-  PWM_SetWidth();  
+  PWM_SetWidth(500);  
 
   while (1) {
     if (in_motion) {
-        last_movement_ms = tick_ms;
-        
-        if (!door_open) {
-            Pin_Write(GPIOA, 2, 0);
-            Pin_Write(GPIOA, 3, 1);
-            PWM_SetWidth(); 
-        }
-        else {
-            if (door_open && (tick_ms - last_movement_ms >= 5000)) {
-                door_open = 0;
-                Pin_Write(GPIOA, 2, 1);
-                Pin_Write(GPIOA, 3, 0);
-                PWM_SetWidth();
-            }
-        }
+
+        Pin_Write(GPIOA, 2, 0);
+        Pin_Write(GPIOA, 3, 1);
+        PWM_SetWidth(2400); 
+
+        delay(250000);
+        in_motion = 0;
+
+    } else {
+        Pin_Write(GPIOA, 2, 1);
+        Pin_Write(GPIOA, 3, 0);
+        PWM_SetWidth(500);
     }
   }
   return 0;
