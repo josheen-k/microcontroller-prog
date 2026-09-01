@@ -22,7 +22,9 @@
 #include <stdint.h>
 
 // define states
-typedef enum { PIN_LOW = 0, PIN_HIGH = 1 } PinState;
+typedef enum { 
+    PIN_LOW = 0, PIN_HIGH = 1 
+} PinState;
 
 typedef enum {
   MODE_INPUT = 0,
@@ -70,9 +72,13 @@ typedef enum { TRIG_RISING = 0, TRIG_FALLING = 1, TRIG_BOTH = 2 } ExtiTrigger;
 void EXTI_Init(GPIO_TypeDef *port, uint8_t pin, ExtiTrigger trigger) {
   // 1. Establish the numerical port identifier
   uint32_t port_idx = 0;
-//   __________________;
-//   __________________;
-//   __________________;
+    if (port == GPIOA) {
+        port_idx = 0;
+    } else if (port == GPIOB) {
+        port_idx = 1;
+    } else if (port == GPIOC) {
+        port_idx = 2;
+    }
 
   // 2. Configure the EXTI_EXTICRx Multiplexer
   // The STM32C0 allocates 8 bits per pin across 4 registers
@@ -87,11 +93,11 @@ void EXTI_Init(GPIO_TypeDef *port, uint8_t pin, ExtiTrigger trigger) {
     EXTI->FTSR1 |= (1 << pin);
   }
   if (trigger == TRIG_RISING || trigger == TRIG_BOTH) {
-    EXT->RTSR1 |= (1 << pin);
+    EXTI->RTSR1 |= (1 << pin);
   }
 
   // 4. Unmask the designated interrupt line : EXTI - > IMR1
-  EXTI->IMRI |= (1<< pin);
+  EXTI->IMR1 |= (1<< pin);
 }
 
 // Wrapper to set the Alternate Function of a pin
@@ -154,6 +160,11 @@ void EXTI0_1_IRQHandler() {
     }
 }
 
+volatile uint16_t tick_ms = 0;
+void (void) { 
+    tick_ms++; 
+}
+
 int main(void) {
 
   Port_Clock_Enable();
@@ -166,7 +177,31 @@ int main(void) {
   NVIC_SetPriority(EXTI0_1_IRQn, 1);
   NVIC_EnableIRQ(EXTI0_1_IRQn);
 
+  uint8_t door_open = 0;
+  uint16_t last_movement = 0;
+
+  Pin_Write(GPIOA, 2, 1);
+  Pin_Write(GPIOA, 3, 0);
+  PWM_SetWidth();  
+
   while (1) {
+    if (in_motion) {
+        last_movement_ms = tick_ms;
+        
+        if (!door_open) {
+            Pin_Write(GPIOA, 2, 0);
+            Pin_Write(GPIOA, 3, 1);
+            PWM_SetWidth(); 
+        }
+        else {
+            if (door_open && (tick_ms - last_movement_ms >= 5000)) {
+                door_open = 0;
+                Pin_Write(GPIOA, 2, 1);
+                Pin_Write(GPIOA, 3, 0);
+                PWM_SetWidth();
+            }
+        }
+    }
   }
   return 0;
 }
