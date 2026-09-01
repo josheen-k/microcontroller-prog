@@ -37,7 +37,7 @@ typedef enum {
 
 // wrappers
 static void Port_Clock_Enable(void) {
-  RCC->IOPENR |= RCC_IOPENR_GPIOAEN;
+     RCC->IOPENR |= RCC_IOPENR_GPIOAEN; 
 }
 
 static void Pin_Mode(GPIO_TypeDef *port, uint8_t pin, PinMode mode) {
@@ -70,28 +70,28 @@ typedef enum { TRIG_RISING = 0, TRIG_FALLING = 1, TRIG_BOTH = 2 } ExtiTrigger;
 void EXTI_Init(GPIO_TypeDef *port, uint8_t pin, ExtiTrigger trigger) {
   // 1. Establish the numerical port identifier
   uint32_t port_idx = 0;
-  __________________;
-  __________________;
-  __________________;
+//   __________________;
+//   __________________;
+//   __________________;
 
   // 2. Configure the EXTI_EXTICRx Multiplexer
   // The STM32C0 allocates 8 bits per pin across 4 registers
   uint8_t register_index = pin / 4;
   uint8_t bit_position = (pin % 4) * 8;
-  __________________;
-  __________________;
+  EXTI->EXTICR[register_index] &= ~(0xFF << bit_position);
+  EXTI->EXTICR[register_index] |=  (port_idx << bit_position);
 
   // 3. Configure Trigger Selection Registers : EXTI - > FTSR1 and EXTI - >
   // RTSR1
   if (trigger == TRIG_FALLING || trigger == TRIG_BOTH) {
-    __________________;
+    EXTI->FTSR1 |= (1 << pin);
   }
   if (trigger == TRIG_RISING || trigger == TRIG_BOTH) {
-    __________________;
+    EXT->RTSR1 |= (1 << pin);
   }
 
   // 4. Unmask the designated interrupt line : EXTI - > IMR1
-  __________________;
+  EXTI->IMRI |= (1<< pin);
 }
 
 // Wrapper to set the Alternate Function of a pin
@@ -99,42 +99,41 @@ void Pin_AltFunc(GPIO_TypeDef *port, uint8_t pin, uint8_t af_number) {
   // AFR [0] handles pins 0 -7. AFR [1] handles pins 8 -15.
   // Each pin gets 4 bits to define its Alternate Function (0 to 15).
   if (pin < 8) {
-    port->AFR[0] &= ~(0 xFUL << (pin * 4));                              //
+    port->AFR[0] &= ~(0 xFUL << (pin * 4));             //
     port->AFR[0] |= ((uint32_t)af_number << (pin * 4)); //
-  }
-  else {
+  } else {
     port->AFR[1] &= ~(0 xFUL << ((pin - 8) * 4));
     port->AFR[1] |= ((uint32_t)af_number << ((pin - 8) * 4));
   }
 }
 void PWM_Init(void) {
   // 1. Set PA8 to Alternate Function Mode (10)
-  __________________;
+  Pin_Mode(GPIOA, 8, MODE_ALT);
 
   // 2. Route PA8 to TIM1_CH1 ( Alternate Function 2)
-  __________________;
+  Pin_AltFunc(GPIOA, 8, 2);
 
   // 3. Enable the TIM1 Clock
-  __________________;
+  RCC->APBENR2 |= (1 << 11); 
 
   // 4. Configure Timer Timing ( Assuming 48 MHz default system clock )
-__________________ ; // Prescaler : we want 1 MHz
-__________________; // Period : 20 ,000 ticks = 20
+  TM1->PSC = 47; // Prescaler : we want 1 MHz
+  TM1->ARR = 19999; // Period : 20 ,000 ticks = 20
 
-    // 5. Configure PWM Mode 1 on Channel 1
-    // Clear output compare mode bits , then set to PWM mode 1 (110)
-__________________;
-__________________;
-__________________; // Enable preload
+  // 5. Configure PWM Mode 1 on Channel 1
+  // Clear output compare mode bits , then set to PWM mode 1 (110)
+  TIM1->CCMR1 &= ~(0b111 << 4);
+  TIM1->CCMR1 |=  (0b110 << 4);
+  TIM1->CCMR1 |=  (1 << 3);  // Enable preload
 
-// 6. Enable Channel 1 Output
-__________________;
+  // 6. Enable Channel 1 Output
+  TIM1->CCER |= (1 << 0); 
 
-// 7. Main Output Enable ( for TIM1 )
+  // 7. Main Output Enable ( for TIM1 )
 
-__________________;
-// 8. Start the Timer
-__________________;
+  __________________;
+  // 8. Start the Timer
+  TIM1->CR1 |= (1 << 0); 
 }
 
 // Wrapper to easily set the pulse width
@@ -142,11 +141,30 @@ void PWM_SetWidth(uint16_t microseconds) {
     TIM1->CCR1 = microseconds; 
 }
 
+volatile uint8_t in_motion = 0;
+
+void EXTI0_1_IRQHandler() {
+    if ((EXTI->RPR1) & (1<<0)) {
+        EXTI->RPR1 |= (1 << 0); 
+        in_motion = 1;
+    }
+    if ((EXTI->FPR1) & (1<<0)) {
+        EXTI->FRP1 |= (1 << 0);
+        in_motion = 0;
+    }
+}
+
 int main(void) {
 
-    Port_Clock_Enable();
+  Port_Clock_Enable();
+  Pin_Mode(GPIOA, 2, MODE_OUTPUT);
+  Pin_Mode(GPIOA, 3, MODE_OUTPUT);
+  Pin_Mode(GPIOA, 0, MODE_INPUT);
 
-
+  PWM_Init();
+  EXTI_Init(GPIOA, 0, TRIG_BOTH);
+  NVIC_SetPriority(EXTI0_1_IRQn, 1);
+  NVIC_EnableIRQ(EXTI0_1_IRQn);
 
   while (1) {
   }
