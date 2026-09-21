@@ -31,6 +31,8 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/files.cmake)
 # Add sources to executable/library
 target_sources(${PROJECT_NAME} PRIVATE
   # User defined sources
+  Src/G474RE_Drivers/uart.c
+  Src/Kobuki_Drivers/kobuki.c
 )
 
 # Add include directories
@@ -41,6 +43,9 @@ target_include_directories(${PROJECT_NAME} PRIVATE
   Inc/drivers/STM32G4xx_HAL_Driver/Inc
   Inc/drivers/Core/Inc
   Inc/drivers/CMSIS/Device/ST/STM32G4xx/Include
+
+  Src/Kobuki_Drivers
+  Src/G474RE_Drivers
 )
 
 # Compiler options
@@ -52,6 +57,7 @@ target_compile_options(${PROJECT_NAME} PRIVATE
 target_compile_definitions(${PROJECT_NAME} PRIVATE
   # Add additional defined symbols here
   STM32G4xx
+  STM32G474xx
   USE_HAL_DRIVER
 )
 
