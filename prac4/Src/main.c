@@ -128,6 +128,7 @@ void PWM_Init(void) {
 
   // 5. Configure PWM Mode 1 on Channel 1
   // Clear output compare mode bits , then set to PWM mode 1 (110)
+  TIM3->CCMR1 &= ~(0b11 << 8); 
   TIM1->CCMR1 &= ~(0b111 << 4);
   TIM1->CCMR1 |=  (0b110 << 4);
   TIM1->CCMR1 |=  (1 << 3);  // Enable preload

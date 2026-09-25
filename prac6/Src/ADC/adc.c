@@ -31,8 +31,7 @@ void ADC_Init(void)
     while ((ADC1->ISR & ADC_ISR_ADRDY) == 0U) { }
 }
 
-uint16_t ADC_Read(uint8_t channel)
-{
+uint16_t ADC_Read(uint8_t channel) {
     if ((channel < 1U) || (channel > 18U))
         return 0U;
 
