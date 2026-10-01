@@ -1,0 +1,3 @@
+/Users/ashlee/Documents/micro/missed-prac/build/Debug/CMakeFiles/missed-prac.dir
+/Users/ashlee/Documents/micro/missed-prac/build/Debug/CMakeFiles/edit_cache.dir
+/Users/ashlee/Documents/micro/missed-prac/build/Debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,6 @@
+# ninja log v7
+2	28	1790817917292296782	CMakeFiles/missed-prac.dir/Src/startup_stm32g474xx.S.obj	ba8940a8b971c468
+1	41	1790817917291532946	CMakeFiles/missed-prac.dir/Src/sysmem.c.obj	3565753484c0bdfc
+1	54	1790817917291122152	CMakeFiles/missed-prac.dir/Src/syscall.c.obj	276ff3eb52e7a996
+3	136	1790818652391190748	CMakeFiles/missed-prac.dir/Src/main.c.obj	3edeca6204fd9e5e
+100	130	1790818617675973164	missed-prac.elf	3dbca032fa23c6cb
