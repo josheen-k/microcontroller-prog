@@ -89,6 +89,26 @@ build CMakeFiles/missed-prac.dir/Src/startup_stm32g474xx.S.obj: ASM_COMPILER__mi
   OBJECT_FILE_DIR = CMakeFiles/missed-prac.dir/Src
   TARGET_SUPPORT_DIR = CMakeFiles/missed-prac.dir
 
+build CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj: C_COMPILER__missed-prac_unscanned_Debug /Users/ashlee/Documents/micro/missed-prac/Src/Kobuki_Drivers/kobuki.c || cmake_object_order_depends_target_missed-prac
+  CONFIG = Debug
+  DEFINES = -DDEBUG -DRTE_DEVICE_STARTUP_STM32G4XX -DSTM32G474xx -DSTM32G4xx -DUSE_HAL_DRIVER
+  DEP_FILE = CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj.d
+  FLAGS = -fdata-sections -ffunction-sections -Wl,--gc-sections -Wno-comment -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mlittle-endian -mthumb -std=gnu11 -fstack-usage -Wall -Wextra -Wpedantic -Wno-unused-parameter -O0 -g3 -ggdb
+  INCLUDES = -I/Users/ashlee/Documents/micro/missed-prac/Inc -I/Users/ashlee/Documents/micro/missed-prac/Inc/drivers/CMSIS/Core/Include -I/Users/ashlee/Documents/micro/missed-prac/Inc/drivers/BSP/STM32G4xx_Nucleo -I/Users/ashlee/Documents/micro/missed-prac/Inc/drivers/STM32G4xx_HAL_Driver/Inc -I/Users/ashlee/Documents/micro/missed-prac/Inc/drivers/Core/Inc -I/Users/ashlee/Documents/micro/missed-prac/Inc/drivers/CMSIS/Device/ST/STM32G4xx/Include -I/Users/ashlee/Documents/micro/missed-prac/Src/Kobuki_Drivers -I/Users/ashlee/Documents/micro/missed-prac/Src/G474RE_Drivers
+  OBJECT_DIR = CMakeFiles/missed-prac.dir
+  OBJECT_FILE_DIR = CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers
+  TARGET_SUPPORT_DIR = CMakeFiles/missed-prac.dir
+
+build CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj: C_COMPILER__missed-prac_unscanned_Debug /Users/ashlee/Documents/micro/missed-prac/Src/G474RE_Drivers/uart.c || cmake_object_order_depends_target_missed-prac
+  CONFIG = Debug
+  DEFINES = -DDEBUG -DRTE_DEVICE_STARTUP_STM32G4XX -DSTM32G474xx -DSTM32G4xx -DUSE_HAL_DRIVER
+  DEP_FILE = CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj.d
+  FLAGS = -fdata-sections -ffunction-sections -Wl,--gc-sections -Wno-comment -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mlittle-endian -mthumb -std=gnu11 -fstack-usage -Wall -Wextra -Wpedantic -Wno-unused-parameter -O0 -g3 -ggdb
+  INCLUDES = -I/Users/ashlee/Documents/micro/missed-prac/Inc -I/Users/ashlee/Documents/micro/missed-prac/Inc/drivers/CMSIS/Core/Include -I/Users/ashlee/Documents/micro/missed-prac/Inc/drivers/BSP/STM32G4xx_Nucleo -I/Users/ashlee/Documents/micro/missed-prac/Inc/drivers/STM32G4xx_HAL_Driver/Inc -I/Users/ashlee/Documents/micro/missed-prac/Inc/drivers/Core/Inc -I/Users/ashlee/Documents/micro/missed-prac/Inc/drivers/CMSIS/Device/ST/STM32G4xx/Include -I/Users/ashlee/Documents/micro/missed-prac/Src/Kobuki_Drivers -I/Users/ashlee/Documents/micro/missed-prac/Src/G474RE_Drivers
+  OBJECT_DIR = CMakeFiles/missed-prac.dir
+  OBJECT_FILE_DIR = CMakeFiles/missed-prac.dir/Src/G474RE_Drivers
+  TARGET_SUPPORT_DIR = CMakeFiles/missed-prac.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target missed-prac
@@ -97,7 +117,7 @@ build CMakeFiles/missed-prac.dir/Src/startup_stm32g474xx.S.obj: ASM_COMPILER__mi
 #############################################
 # Link the executable missed-prac.elf
 
-build missed-prac.elf: C_EXECUTABLE_LINKER__missed-prac_Debug CMakeFiles/missed-prac.dir/Src/syscall.c.obj CMakeFiles/missed-prac.dir/Src/sysmem.c.obj CMakeFiles/missed-prac.dir/Src/main.c.obj CMakeFiles/missed-prac.dir/Src/startup_stm32g474xx.S.obj | stm32g474xe_flash.ld
+build missed-prac.elf: C_EXECUTABLE_LINKER__missed-prac_Debug CMakeFiles/missed-prac.dir/Src/syscall.c.obj CMakeFiles/missed-prac.dir/Src/sysmem.c.obj CMakeFiles/missed-prac.dir/Src/main.c.obj CMakeFiles/missed-prac.dir/Src/startup_stm32g474xx.S.obj CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj | stm32g474xe_flash.ld
   CONFIG = Debug
   FLAGS = -fdata-sections -ffunction-sections -Wl,--gc-sections -Wno-comment
   LINK_FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mlittle-endian -mthumb -T/Users/ashlee/Documents/micro/missed-prac/build/Debug/stm32g474xe_flash.ld -Wl,-Map=/Users/ashlee/Documents/micro/missed-prac/build/Debug/missed-prac.map -u _printf_float --specs=nosys.specs -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group -Wl,-z,max-page-size=8 -Wl,--print-memory-usage

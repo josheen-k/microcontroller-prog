@@ -1,0 +1,5 @@
+/Users/ashlee/Documents/micro/missed-prac/Src/Kobuki_Drivers/kobuki.c:16:6:Kobuki_Read	32	static
+/Users/ashlee/Documents/micro/missed-prac/Src/Kobuki_Drivers/kobuki.c:35:6:Kobuki_Tx	24	static
+/Users/ashlee/Documents/micro/missed-prac/Src/Kobuki_Drivers/kobuki.c:50:9:Kobuki_Rx	40	static
+/Users/ashlee/Documents/micro/missed-prac/Src/Kobuki_Drivers/kobuki.c:90:6:Kobuki_Drive	24	static
+/Users/ashlee/Documents/micro/missed-prac/Src/Kobuki_Drivers/kobuki.c:108:6:Kobuki_Rotate	24	static

@@ -553,6 +553,158 @@ Discarded input sections
  .text          0x00000000       0x14 CMakeFiles/missed-prac.dir/Src/startup_stm32g474xx.S.obj
  .data          0x00000000        0x0 CMakeFiles/missed-prac.dir/Src/startup_stm32g474xx.S.obj
  .bss           0x00000000        0x0 CMakeFiles/missed-prac.dir/Src/startup_stm32g474xx.S.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .text          0x00000000        0x0 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .data          0x00000000        0x0 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .bss           0x00000000        0x0 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000      0xae4 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000       0x22 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000       0x8e CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000       0x51 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000      0x103 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000       0x6a CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000      0x1df CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000       0x2e CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000       0x2e CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000       0x28 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000       0x1c CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000       0x22 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000       0xfb CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000     0x1011 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000      0x11f CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000    0x18b8c CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000       0x6d CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000      0x155 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000     0x3558 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000      0x190 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000       0x5c CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000     0x171f CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000      0x600 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000      0x1b6 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000      0x34a CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000      0x53c CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000      0x18b CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000       0x43 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000      0x23d CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000      0x211 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000      0x45c CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000      0x11c CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000      0x122 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000      0x3d1 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000      0x693 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000       0xa6 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00000000      0x358 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .group         0x00000000        0xc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .text          0x00000000        0x0 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .data          0x00000000        0x0 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .bss           0x00000000        0x0 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000      0xae4 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000       0x22 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000       0x8e CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000       0x51 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000      0x103 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000       0x6a CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000      0x1df CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000       0x2e CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000       0x28 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000       0x1c CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000       0x22 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000       0xfb CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000     0x1011 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000      0x11f CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000    0x18b8c CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000       0x6d CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000      0x155 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000     0x3558 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000      0x190 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000       0x5c CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000     0x171f CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000      0x600 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000      0x1b6 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000      0x34a CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000      0x53c CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000      0x18b CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000       0x43 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000      0x23d CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000      0x211 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000      0x45c CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000      0x11c CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000      0x122 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000      0x3d1 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000      0x693 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000       0xa6 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .debug_macro   0x00000000      0x358 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
  .text          0x00000000        0x0 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtend.o
  .data          0x00000000        0x0 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtend.o
  .bss           0x00000000        0x0 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtend.o
@@ -587,6 +739,8 @@ LOAD CMakeFiles/missed-prac.dir/Src/syscall.c.obj
 LOAD CMakeFiles/missed-prac.dir/Src/sysmem.c.obj
 LOAD CMakeFiles/missed-prac.dir/Src/main.c.obj
 LOAD CMakeFiles/missed-prac.dir/Src/startup_stm32g474xx.S.obj
+LOAD CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+LOAD CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
 START GROUP
 LOAD /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/libgcc.a
 LOAD /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a
@@ -609,7 +763,7 @@ LOAD /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-s
                 0x08000000                g_pfnVectors
                 0x080001d8                        . = ALIGN (0x4)
 
-.text           0x080001d8      0x1fc
+.text           0x080001d8      0x5a8
                 0x080001d8                        . = ALIGN (0x4)
  *(.text)
  .text          0x080001d8       0x40 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
@@ -633,201 +787,225 @@ LOAD /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-s
  .text.__register_exitproc
                 0x080002b8       0x80 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-__atexit.o)
                 0x080002b8                __register_exitproc
- .text.main     0x08000338       0x30 CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .text.main     0x08000338       0x8c CMakeFiles/missed-prac.dir/Src/main.c.obj
                 0x08000338                main
  .text.Reset_Handler
-                0x08000368       0x50 CMakeFiles/missed-prac.dir/Src/startup_stm32g474xx.S.obj
-                0x08000368                Reset_Handler
+                0x080003c4       0x50 CMakeFiles/missed-prac.dir/Src/startup_stm32g474xx.S.obj
+                0x080003c4                Reset_Handler
  .text.Default_Handler
-                0x080003b8        0x2 CMakeFiles/missed-prac.dir/Src/startup_stm32g474xx.S.obj
-                0x080003b8                TIM1_BRK_TIM15_IRQHandler
-                0x080003b8                TIM8_TRG_COM_IRQHandler
-                0x080003b8                TIM8_CC_IRQHandler
-                0x080003b8                DMA2_CH8_IRQHandler
-                0x080003b8                DebugMon_Handler
-                0x080003b8                DMA1_CH4_IRQHandler
-                0x080003b8                SPI4_IRQHandler
-                0x080003b8                HRTIM_TIM_FLT_IRQn_IRQHandler
-                0x080003b8                FDCAN3_IT0_IRQHandler
-                0x080003b8                TIM1_CC_IRQHandler
-                0x080003b8                Cordic_IRQHandler
-                0x080003b8                HardFault_Handler
-                0x080003b8                USB_HP_IRQHandler
-                0x080003b8                SysTick_Handler
-                0x080003b8                PendSV_Handler
-                0x080003b8                NMI_Handler
-                0x080003b8                HRTIM_TIMD_IRQn_IRQHandler
-                0x080003b8                EXTI3_IRQHandler
-                0x080003b8                I2C3_ER_IRQHandler
-                0x080003b8                HRTIM_Master_IRQn_IRQHandler
-                0x080003b8                DMA1_CH8_IRQHandler
-                0x080003b8                TIM6_DACUNDER_IRQHandler
-                0x080003b8                EXTI0_IRQHandler
-                0x080003b8                I2C2_EV_IRQHandler
-                0x080003b8                DMA2_CH1_IRQHandler
-                0x080003b8                FPU_IRQHandler
-                0x080003b8                FDCAN1_IT1_IRQHandler
-                0x080003b8                TIM1_UP_TIM16_IRQHandler
-                0x080003b8                DMA2_CH7_IRQHandler
-                0x080003b8                UsageFault_Handler
-                0x080003b8                ADC1_2_IRQHandler
-                0x080003b8                SPI1_IRQHandler
-                0x080003b8                DMA1_CH7_IRQHandler
-                0x080003b8                HRTIM_TIMB_IRQn_IRQHandler
-                0x080003b8                TIM8_UP_IRQHandler
-                0x080003b8                USBWakeUP_IRQHandler
-                0x080003b8                RTC_ALARM_IRQHandler
-                0x080003b8                DMA1_CH6_IRQHandler
-                0x080003b8                TIM20_TRG_COM_IRQHandler
-                0x080003b8                USART3_IRQHandler
-                0x080003b8                LPUART_IRQHandler
-                0x080003b8                UART5_IRQHandler
-                0x080003b8                ADC3_IRQHandler
-                0x080003b8                TIM4_IRQHandler
-                0x080003b8                QUADSPI_IRQHandler
-                0x080003b8                I2C1_EV_IRQHandler
-                0x080003b8                DMA2_CH5_IRQHandler
-                0x080003b8                UART4_IRQHandler
-                0x080003b8                DMA1_CH3_IRQHandler
-                0x080003b8                TIM3_IRQHandler
-                0x080003b8                RCC_IRQHandler
-                0x080003b8                TIM20_UP_IRQHandler
-                0x080003b8                TIM1_TRG_COM_IRQHandler
-                0x080003b8                Default_Handler
-                0x080003b8                FMAC_IRQHandler
-                0x080003b8                EXTI15_10_IRQHandler
-                0x080003b8                TIM7_IRQHandler
-                0x080003b8                FDCAN3_IT1_IRQHandler
-                0x080003b8                TIM5_IRQHandler
-                0x080003b8                UCPD1_IRQHandler
-                0x080003b8                I2C3_EV_IRQHandler
-                0x080003b8                EXTI9_5_IRQHandler
-                0x080003b8                DMA1_CH2_IRQHandler
-                0x080003b8                RTC_WKUP_IRQHandler
-                0x080003b8                SAI_IRQHandler
-                0x080003b8                PVD_PVM_IRQHandler
-                0x080003b8                SPI2_IRQHandler
-                0x080003b8                DMA1_CH1_IRQHandler
-                0x080003b8                MemManage_Handler
-                0x080003b8                ADC5_IRQHandler
-                0x080003b8                SVC_Handler
-                0x080003b8                CRS_IRQHandler
-                0x080003b8                USB_LP_IRQHandler
-                0x080003b8                EXTI4_IRQHandler
-                0x080003b8                RNG_IRQHandler
-                0x080003b8                FDCAN2_IT1_IRQHandler
-                0x080003b8                HRTIM_TIMF_IRQn_IRQHandler
-                0x080003b8                ADC4_IRQHandler
-                0x080003b8                HRTIM_TIMA_IRQn_IRQHandler
-                0x080003b8                WWDG_IRQHandler
-                0x080003b8                I2C4_EV_IRQHandler
-                0x080003b8                FDCAN2_IT0_IRQHandler
-                0x080003b8                FDCAN1_IT0_IRQHandler
-                0x080003b8                TIM2_IRQHandler
-                0x080003b8                COMP7_IRQHandler
-                0x080003b8                COMP1_2_3_IRQHandler
-                0x080003b8                EXTI1_IRQHandler
-                0x080003b8                HRTIM_TIMC_IRQn_IRQHandler
-                0x080003b8                USART2_IRQHandler
-                0x080003b8                COMP4_5_6_IRQHandler
-                0x080003b8                TIM20_BRK_IRQHandler
-                0x080003b8                I2C2_ER_IRQHandler
-                0x080003b8                TIM8_BRK_IRQHandler
-                0x080003b8                FLASH_IRQHandler
-                0x080003b8                TIM20_CC_IRQHandler
-                0x080003b8                BusFault_Handler
-                0x080003b8                USART1_IRQHandler
-                0x080003b8                SPI3_IRQHandler
-                0x080003b8                DMA2_CH6_IRQHandler
-                0x080003b8                DMA2_CH3_IRQHandler
-                0x080003b8                DMA2_CH2_IRQHandler
-                0x080003b8                I2C1_ER_IRQHandler
-                0x080003b8                FMC_IRQHandler
-                0x080003b8                DMA1_CH5_IRQHandler
-                0x080003b8                DMA2_CH4_IRQHandler
-                0x080003b8                LPTIM1_IRQHandler
-                0x080003b8                DMAMUX_OVR_IRQHandler
-                0x080003b8                I2C4_ER_IRQHandler
-                0x080003b8                HRTIM_TIME_IRQn_IRQHandler
-                0x080003b8                RTC_TAMP_CSS_LSE_IRQHandler
-                0x080003b8                EXTI2_IRQHandler
+                0x08000414        0x2 CMakeFiles/missed-prac.dir/Src/startup_stm32g474xx.S.obj
+                0x08000414                TIM1_BRK_TIM15_IRQHandler
+                0x08000414                TIM8_TRG_COM_IRQHandler
+                0x08000414                TIM8_CC_IRQHandler
+                0x08000414                DMA2_CH8_IRQHandler
+                0x08000414                DebugMon_Handler
+                0x08000414                DMA1_CH4_IRQHandler
+                0x08000414                SPI4_IRQHandler
+                0x08000414                HRTIM_TIM_FLT_IRQn_IRQHandler
+                0x08000414                FDCAN3_IT0_IRQHandler
+                0x08000414                TIM1_CC_IRQHandler
+                0x08000414                Cordic_IRQHandler
+                0x08000414                HardFault_Handler
+                0x08000414                USB_HP_IRQHandler
+                0x08000414                SysTick_Handler
+                0x08000414                PendSV_Handler
+                0x08000414                NMI_Handler
+                0x08000414                HRTIM_TIMD_IRQn_IRQHandler
+                0x08000414                EXTI3_IRQHandler
+                0x08000414                I2C3_ER_IRQHandler
+                0x08000414                HRTIM_Master_IRQn_IRQHandler
+                0x08000414                DMA1_CH8_IRQHandler
+                0x08000414                TIM6_DACUNDER_IRQHandler
+                0x08000414                EXTI0_IRQHandler
+                0x08000414                I2C2_EV_IRQHandler
+                0x08000414                DMA2_CH1_IRQHandler
+                0x08000414                FPU_IRQHandler
+                0x08000414                FDCAN1_IT1_IRQHandler
+                0x08000414                TIM1_UP_TIM16_IRQHandler
+                0x08000414                DMA2_CH7_IRQHandler
+                0x08000414                UsageFault_Handler
+                0x08000414                ADC1_2_IRQHandler
+                0x08000414                SPI1_IRQHandler
+                0x08000414                DMA1_CH7_IRQHandler
+                0x08000414                HRTIM_TIMB_IRQn_IRQHandler
+                0x08000414                TIM8_UP_IRQHandler
+                0x08000414                USBWakeUP_IRQHandler
+                0x08000414                RTC_ALARM_IRQHandler
+                0x08000414                DMA1_CH6_IRQHandler
+                0x08000414                TIM20_TRG_COM_IRQHandler
+                0x08000414                USART3_IRQHandler
+                0x08000414                LPUART_IRQHandler
+                0x08000414                UART5_IRQHandler
+                0x08000414                ADC3_IRQHandler
+                0x08000414                TIM4_IRQHandler
+                0x08000414                QUADSPI_IRQHandler
+                0x08000414                I2C1_EV_IRQHandler
+                0x08000414                DMA2_CH5_IRQHandler
+                0x08000414                UART4_IRQHandler
+                0x08000414                DMA1_CH3_IRQHandler
+                0x08000414                TIM3_IRQHandler
+                0x08000414                RCC_IRQHandler
+                0x08000414                TIM20_UP_IRQHandler
+                0x08000414                TIM1_TRG_COM_IRQHandler
+                0x08000414                Default_Handler
+                0x08000414                FMAC_IRQHandler
+                0x08000414                EXTI15_10_IRQHandler
+                0x08000414                TIM7_IRQHandler
+                0x08000414                FDCAN3_IT1_IRQHandler
+                0x08000414                TIM5_IRQHandler
+                0x08000414                UCPD1_IRQHandler
+                0x08000414                I2C3_EV_IRQHandler
+                0x08000414                EXTI9_5_IRQHandler
+                0x08000414                DMA1_CH2_IRQHandler
+                0x08000414                RTC_WKUP_IRQHandler
+                0x08000414                SAI_IRQHandler
+                0x08000414                PVD_PVM_IRQHandler
+                0x08000414                SPI2_IRQHandler
+                0x08000414                DMA1_CH1_IRQHandler
+                0x08000414                MemManage_Handler
+                0x08000414                ADC5_IRQHandler
+                0x08000414                SVC_Handler
+                0x08000414                CRS_IRQHandler
+                0x08000414                USB_LP_IRQHandler
+                0x08000414                EXTI4_IRQHandler
+                0x08000414                RNG_IRQHandler
+                0x08000414                FDCAN2_IT1_IRQHandler
+                0x08000414                HRTIM_TIMF_IRQn_IRQHandler
+                0x08000414                ADC4_IRQHandler
+                0x08000414                HRTIM_TIMA_IRQn_IRQHandler
+                0x08000414                WWDG_IRQHandler
+                0x08000414                I2C4_EV_IRQHandler
+                0x08000414                FDCAN2_IT0_IRQHandler
+                0x08000414                FDCAN1_IT0_IRQHandler
+                0x08000414                TIM2_IRQHandler
+                0x08000414                COMP7_IRQHandler
+                0x08000414                COMP1_2_3_IRQHandler
+                0x08000414                EXTI1_IRQHandler
+                0x08000414                HRTIM_TIMC_IRQn_IRQHandler
+                0x08000414                USART2_IRQHandler
+                0x08000414                COMP4_5_6_IRQHandler
+                0x08000414                TIM20_BRK_IRQHandler
+                0x08000414                I2C2_ER_IRQHandler
+                0x08000414                TIM8_BRK_IRQHandler
+                0x08000414                FLASH_IRQHandler
+                0x08000414                TIM20_CC_IRQHandler
+                0x08000414                BusFault_Handler
+                0x08000414                USART1_IRQHandler
+                0x08000414                SPI3_IRQHandler
+                0x08000414                DMA2_CH6_IRQHandler
+                0x08000414                DMA2_CH3_IRQHandler
+                0x08000414                DMA2_CH2_IRQHandler
+                0x08000414                I2C1_ER_IRQHandler
+                0x08000414                FMC_IRQHandler
+                0x08000414                DMA1_CH5_IRQHandler
+                0x08000414                DMA2_CH4_IRQHandler
+                0x08000414                LPTIM1_IRQHandler
+                0x08000414                DMAMUX_OVR_IRQHandler
+                0x08000414                I2C4_ER_IRQHandler
+                0x08000414                HRTIM_TIME_IRQn_IRQHandler
+                0x08000414                RTC_TAMP_CSS_LSE_IRQHandler
+                0x08000414                EXTI2_IRQHandler
+ .text.Kobuki_Read
+                0x08000416       0x3e CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+                0x08000416                Kobuki_Read
+ .text.Kobuki_Tx
+                0x08000454       0x6c CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+                0x08000454                Kobuki_Tx
+ .text.Kobuki_Rx
+                0x080004c0       0xc6 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+                0x080004c0                Kobuki_Rx
+ .text.Kobuki_Drive
+                0x08000586       0x60 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+                0x08000586                Kobuki_Drive
+ *fill*         0x080005e6        0x2 
+ .text.Kobuki_Rotate
+                0x080005e8       0x6c CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+                0x080005e8                Kobuki_Rotate
+ .text.UART_Init
+                0x08000654       0xac CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+                0x08000654                UART_Init
+ .text.UART_Tx  0x08000700       0x30 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+                0x08000700                UART_Tx
+ .text.UART_Rx  0x08000730       0x38 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+                0x08000730                UART_Rx
  *(.glue_7)
- .glue_7        0x080003ba        0x0 linker stubs
+ .glue_7        0x08000768        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x080003ba        0x0 linker stubs
+ .glue_7t       0x08000768        0x0 linker stubs
  *(.eh_frame)
- *fill*         0x080003ba        0x2 
- .eh_frame      0x080003bc        0x0 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .eh_frame      0x08000768        0x0 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.init)
- .init          0x080003bc        0x4 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x080003bc                _init
- .init          0x080003c0        0x8 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x08000768        0x4 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x08000768                _init
+ .init          0x0800076c        0x8 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x080003c8        0x4 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x080003c8                _fini
- .fini          0x080003cc        0x8 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtn.o
-                0x080003d4                        . = ALIGN (0x4)
-                0x080003d4                        _etext = .
+ .fini          0x08000774        0x4 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x08000774                _fini
+ .fini          0x08000778        0x8 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x08000780                        . = ALIGN (0x4)
+                0x08000780                        _etext = .
 
-.vfp11_veneer   0x080003d4        0x0
- .vfp11_veneer  0x080003d4        0x0 linker stubs
+.vfp11_veneer   0x08000780        0x0
+ .vfp11_veneer  0x08000780        0x0 linker stubs
 
-.v4_bx          0x080003d4        0x0
- .v4_bx         0x080003d4        0x0 linker stubs
+.v4_bx          0x08000780        0x0
+ .v4_bx         0x08000780        0x0 linker stubs
 
-.iplt           0x080003d4        0x0
- .iplt          0x080003d4        0x0 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.iplt           0x08000780        0x0
+ .iplt          0x08000780        0x0 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x080003d4        0x0
-                0x080003d4                        . = ALIGN (0x4)
+.rodata         0x08000780        0x8
+                0x08000780                        . = ALIGN (0x4)
  *(.rodata)
+ .rodata        0x08000780        0x6 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
  *(.rodata*)
-                0x080003d4                        . = ALIGN (0x4)
+                0x08000788                        . = ALIGN (0x4)
+ *fill*         0x08000786        0x2 
 
-.ARM.extab      0x080003d4        0x0
-                0x080003d4                        . = ALIGN (0x4)
+.ARM.extab      0x08000788        0x0
+                0x08000788                        . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x080003d4                        . = ALIGN (0x4)
+                0x08000788                        . = ALIGN (0x4)
 
-.ARM            0x080003d4        0x0
-                0x080003d4                        . = ALIGN (0x4)
-                0x080003d4                        __exidx_start = .
+.ARM            0x08000788        0x0
+                0x08000788                        . = ALIGN (0x4)
+                0x08000788                        __exidx_start = .
  *(.ARM.exidx*)
-                0x080003d4                        __exidx_end = .
-                0x080003d4                        . = ALIGN (0x4)
+                0x08000788                        __exidx_end = .
+                0x08000788                        . = ALIGN (0x4)
 
-.preinit_array  0x080003d4        0x0
-                0x080003d4                        . = ALIGN (0x4)
-                0x080003d4                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x08000788        0x0
+                0x08000788                        . = ALIGN (0x4)
+                0x08000788                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x080003d4                        PROVIDE (__preinit_array_end = .)
-                0x080003d4                        . = ALIGN (0x4)
+                0x08000788                        PROVIDE (__preinit_array_end = .)
+                0x08000788                        . = ALIGN (0x4)
 
-.init_array     0x080003d4        0x8
-                0x080003d4                        . = ALIGN (0x4)
-                0x080003d4                        PROVIDE (__init_array_start = .)
+.init_array     0x08000788        0x8
+                0x08000788                        . = ALIGN (0x4)
+                0x08000788                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  .init_array.00000
-                0x080003d4        0x4 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-__call_atexit.o)
+                0x08000788        0x4 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-__call_atexit.o)
  *(.init_array*)
- .init_array    0x080003d8        0x4 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x080003dc                        PROVIDE (__init_array_end = .)
-                0x080003dc                        . = ALIGN (0x4)
+ .init_array    0x0800078c        0x4 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x08000790                        PROVIDE (__init_array_end = .)
+                0x08000790                        . = ALIGN (0x4)
 
-.fini_array     0x080003dc        0x4
-                0x080003dc                        . = ALIGN (0x4)
-                0x080003dc                        PROVIDE (__fini_array_start = .)
+.fini_array     0x08000790        0x4
+                0x08000790                        . = ALIGN (0x4)
+                0x08000790                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x080003dc        0x4 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x080003e0                        PROVIDE (__fini_array_end = .)
-                0x080003e0                        . = ALIGN (0x4)
-                0x080003e0                        _sidata = LOADADDR (.data)
+ .fini_array    0x08000790        0x4 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x08000794                        PROVIDE (__fini_array_end = .)
+                0x08000794                        . = ALIGN (0x4)
+                0x08000794                        _sidata = LOADADDR (.data)
 
-.rel.dyn        0x080003e0        0x0
- .rel.iplt      0x080003e0        0x0 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x08000794        0x0
+ .rel.iplt      0x08000794        0x0 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.data           0x20000000        0x4 load address 0x080003e0
+.data           0x20000000        0x4 load address 0x08000794
                 0x20000000                        _sdata = .
  *(.data)
  *(.data*)
@@ -838,10 +1016,10 @@ LOAD /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-s
  *(.RamFunc*)
                 0x20000004                        . = ALIGN (0x4)
 
-.igot.plt       0x20000004        0x0 load address 0x080003e4
+.igot.plt       0x20000004        0x0 load address 0x08000798
  .igot.plt      0x20000004        0x0 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.tdata          0x20000004        0x0 load address 0x080003e4
+.tdata          0x20000004        0x0 load address 0x08000798
  *(.tdata .tdata.* .gnu.linkonce.td.*)
                 0x20000004                        . = ALIGN (0x4)
                 0x20000004                        _edata = .
@@ -858,7 +1036,7 @@ LOAD /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-s
                 [!provide]                        PROVIDE (__data_source_end = __tdata_source_end)
                 [!provide]                        PROVIDE (__data_source_size = (__data_source_end - __data_source))
 
-.tbss           0x20000004        0x0 load address 0x080003e4
+.tbss           0x20000004        0x0 load address 0x08000798
                 0x20000004                        _sbss = .
                 0x20000004                        __bss_start__ = _sbss
                 [!provide]                        PROVIDE (__bss_start = .)
@@ -876,7 +1054,7 @@ LOAD /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-s
                 [!provide]                        PROVIDE (__arm32_tls_tcb_offset = MAX (0x8, __tls_align))
                 [!provide]                        PROVIDE (__arm64_tls_tcb_offset = MAX (0x10, __tls_align))
 
-.bss            0x20000004      0x1b4 load address 0x080003e4
+.bss            0x20000004      0x1b4 load address 0x08000798
  *(.bss)
  .bss           0x20000004       0x1c /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.bss*)
@@ -896,9 +1074,9 @@ LOAD /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-s
                 [!provide]                        PROVIDE (__bss_end = .)
                 [!provide]                        PROVIDE (__bss_size = (__bss_end - __bss_start))
                 [!provide]                        PROVIDE (__non_tls_bss_start = ADDR (.bss))
-                0x080003e4                        _siccmsram = LOADADDR (.ccmsram)
+                0x08000798                        _siccmsram = LOADADDR (.ccmsram)
 
-.ccmsram        0x10000000        0x0 load address 0x080003e4
+.ccmsram        0x10000000        0x0 load address 0x08000798
                 0x10000000                        . = ALIGN (0x4)
                 0x10000000                        _sccmsram = .
  *(.ccmsram)
@@ -946,11 +1124,15 @@ LOAD /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-s
  .ARM.attributes
                 0x000001c2       0x21 CMakeFiles/missed-prac.dir/Src/startup_stm32g474xx.S.obj
  .ARM.attributes
-                0x000001e3       0x22 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x000001e3       0x34 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .ARM.attributes
+                0x00000217       0x34 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
+ .ARM.attributes
+                0x0000024b       0x22 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtn.o
 OUTPUT(missed-prac.elf elf32-littlearm)
 LOAD linker stubs
 
-.debug_frame    0x00000000      0x1f0
+.debug_frame    0x00000000      0x324
  .debug_frame   0x00000000       0x2c /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-init.o)
  .debug_frame   0x0000002c       0xb0 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-lock.o)
  .debug_frame   0x000000dc       0x5c /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-__call_atexit.o)
@@ -958,74 +1140,96 @@ LOAD linker stubs
  .debug_frame   0x00000158       0x34 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-fini.o)
  .debug_frame   0x0000018c       0x34 /Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-__atexit.o)
  .debug_frame   0x000001c0       0x30 CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_frame   0x000001f0       0xc8 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_frame   0x000002b8       0x6c CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
 
-.debug_info     0x00000000      0x164
- .debug_info    0x00000000      0x134 CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_info    0x00000134       0x30 CMakeFiles/missed-prac.dir/Src/startup_stm32g474xx.S.obj
+.debug_info     0x00000000      0x8db
+ .debug_info    0x00000000      0x185 CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_info    0x00000185       0x30 CMakeFiles/missed-prac.dir/Src/startup_stm32g474xx.S.obj
+ .debug_info    0x000001b5      0x2f3 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_info    0x000004a8      0x433 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
 
-.debug_abbrev   0x00000000      0x106
- .debug_abbrev  0x00000000       0xe2 CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_abbrev  0x000000e2       0x24 CMakeFiles/missed-prac.dir/Src/startup_stm32g474xx.S.obj
+.debug_abbrev   0x00000000      0x326
+ .debug_abbrev  0x00000000       0xe5 CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_abbrev  0x000000e5       0x24 CMakeFiles/missed-prac.dir/Src/startup_stm32g474xx.S.obj
+ .debug_abbrev  0x00000109      0x121 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_abbrev  0x0000022a       0xfc CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
 
-.debug_aranges  0x00000000       0x48
+.debug_aranges  0x00000000       0xb8
  .debug_aranges
                 0x00000000       0x20 CMakeFiles/missed-prac.dir/Src/main.c.obj
  .debug_aranges
                 0x00000020       0x28 CMakeFiles/missed-prac.dir/Src/startup_stm32g474xx.S.obj
+ .debug_aranges
+                0x00000048       0x40 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_aranges
+                0x00000088       0x30 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
 
 .debug_rnglists
-                0x00000000       0x2c
+                0x00000000       0x79
  .debug_rnglists
-                0x00000000       0x13 CMakeFiles/missed-prac.dir/Src/main.c.obj
+                0x00000000       0x14 CMakeFiles/missed-prac.dir/Src/main.c.obj
  .debug_rnglists
-                0x00000013       0x19 CMakeFiles/missed-prac.dir/Src/startup_stm32g474xx.S.obj
+                0x00000014       0x19 CMakeFiles/missed-prac.dir/Src/startup_stm32g474xx.S.obj
+ .debug_rnglists
+                0x0000002d       0x2c CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_rnglists
+                0x00000059       0x20 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
 
-.debug_macro    0x00000000    0x21b0e
+.debug_macro    0x00000000    0x21ecf
  .debug_macro   0x00000000      0x1d3 CMakeFiles/missed-prac.dir/Src/main.c.obj
  .debug_macro   0x000001d3       0x8e CMakeFiles/missed-prac.dir/Src/main.c.obj
  .debug_macro   0x00000261       0x51 CMakeFiles/missed-prac.dir/Src/main.c.obj
  .debug_macro   0x000002b2       0x2e CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x000002e0       0x28 CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x00000308       0x1c CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x00000324       0x22 CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x00000346       0xfb CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x00000441     0x1011 CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x00001452      0x11f CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x00001571    0x18b8c CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x0001a0fd       0x6d CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x0001a16a      0x155 CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x0001a2bf     0x3558 CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x0001d817       0x5c CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x0001d873     0x171f CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x0001ef92      0x600 CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x0001f592      0x1b6 CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x0001f748      0x34a CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x0001fa92      0x53c CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x0001ffce      0x18b CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x00020159       0x43 CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x0002019c      0x23d CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x000203d9      0x211 CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x000205ea      0x45c CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x00020a46      0x11c CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x00020b62      0x122 CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x00020c84      0x3d1 CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x00021055      0x693 CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x000216e8       0xa6 CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x0002178e      0x358 CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_macro   0x00021ae6       0x28 CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x000002e0       0x2e CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x0000030e       0x28 CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x00000336       0x1c CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x00000352       0x22 CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x00000374       0xfb CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x0000046f     0x1011 CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x00001480      0x11f CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x0000159f    0x18b8c CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x0001a12b       0x6d CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x0001a198      0x155 CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x0001a2ed     0x3558 CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x0001d845       0x5c CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x0001d8a1     0x171f CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x0001efc0      0x600 CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x0001f5c0      0x1b6 CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x0001f776      0x34a CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x0001fac0      0x53c CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x0001fffc      0x18b CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x00020187       0x43 CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x000201ca      0x23d CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x00020407      0x211 CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x00020618      0x45c CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x00020a74      0x11c CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x00020b90      0x122 CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x00020cb2      0x3d1 CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x00021083      0x693 CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x00021716       0xa6 CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x000217bc      0x358 CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_macro   0x00021b14      0x1f1 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_macro   0x00021d05      0x1ca CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
 
-.debug_line     0x00000000      0x7d0
- .debug_line    0x00000000      0x755 CMakeFiles/missed-prac.dir/Src/main.c.obj
- .debug_line    0x00000755       0x7b CMakeFiles/missed-prac.dir/Src/startup_stm32g474xx.S.obj
+.debug_line     0x00000000     0x17f8
+ .debug_line    0x00000000      0x798 CMakeFiles/missed-prac.dir/Src/main.c.obj
+ .debug_line    0x00000798       0x7b CMakeFiles/missed-prac.dir/Src/startup_stm32g474xx.S.obj
+ .debug_line    0x00000813      0x85f CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_line    0x00001072      0x786 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
 
-.debug_str      0x00000000    0xe21e1
- .debug_str     0x00000000    0xe21e1 CMakeFiles/missed-prac.dir/Src/main.c.obj
-                              0xe2412 (size before relaxing)
- .debug_str     0x000e21e1       0x96 CMakeFiles/missed-prac.dir/Src/startup_stm32g474xx.S.obj
+.debug_str      0x00000000    0xe2509
+ .debug_str     0x00000000    0xe2509 CMakeFiles/missed-prac.dir/Src/main.c.obj
+                              0xe246f (size before relaxing)
+ .debug_str     0x000e2509       0x96 CMakeFiles/missed-prac.dir/Src/startup_stm32g474xx.S.obj
+ .debug_str     0x000e2509    0xe2521 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .debug_str     0x000e2509    0xe2561 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
 
 .comment        0x00000000       0x43
  .comment       0x00000000       0x43 CMakeFiles/missed-prac.dir/Src/main.c.obj
                                  0x44 (size before relaxing)
+ .comment       0x00000043       0x44 CMakeFiles/missed-prac.dir/Src/Kobuki_Drivers/kobuki.c.obj
+ .comment       0x00000043       0x44 CMakeFiles/missed-prac.dir/Src/G474RE_Drivers/uart.c.obj
 
 .debug_line_str
                 0x00000000       0x7a

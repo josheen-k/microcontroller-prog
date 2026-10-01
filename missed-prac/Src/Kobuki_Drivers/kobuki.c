@@ -41,7 +41,7 @@ void Kobuki_Tx(uint8_t *payload, uint8_t size_payload) {
 
   // Send each byte of payload one - by - one
   for (i = 0; i < size_payload; i++) {
-    UART_Tx(payload);
+    UART_Tx(payload[i]);
     checksum ^= payload[i];
   }
   UART_Tx(checksum); // Send checksum
@@ -85,4 +85,39 @@ uint8_t Kobuki_Rx(uint8_t *feedback, uint32_t size_feedback) {
   // 6. Verify Checksum
   rx_checksum = UART_Rx();          // checksum from kobuki - final byte
   return (checksum != rx_checksum); // 0 = Success , 1 = Error
+}
+
+void Kobuki_Drive(int16_t speed) {
+  uint8_t speed_lsb = 0;
+  uint8_t speed_msb = 0;
+  // Construct payload
+  uint8_t payload[] = {0x01, 0x04, 0x00, 0x00, 0x00, 0x00};
+  // saturation to avoid going over speed limit
+  if (speed > SPEED_LIMIT) {
+    speed = SPEED_LIMIT;
+  } else if (speed < -SPEED_LIMIT) {
+    speed = (~SPEED_LIMIT) + 1;
+  }
+  // Split LSB & MSB for payload
+  // There is no truncation warning due to stdint
+  payload[2] = (uint8_t)speed;
+  payload[3] = (uint8_t)(speed >> 8);
+  Kobuki_Tx(payload, sizeof(payload));
+}
+
+void Kobuki_Rotate(int16_t speed) {
+  uint8_t speed_lsb = 0;
+  uint8_t speed_msb = 0;
+  // Construct payload
+  uint8_t payload[] = {0x01, 0x04, 0x00, 0x00, 0x01, 0x00};
+  // saturation to avoid going over speed limit
+  if (speed > SPEED_LIMIT) {
+    speed = SPEED_LIMIT;
+  } else if (speed < -SPEED_LIMIT) {
+    speed = (~SPEED_LIMIT) + 1;
+  }
+  // split lsb & msb for payload
+  payload[2] = (uint8_t)speed;
+  payload[3] = (uint8_t)(speed >> 8);
+  Kobuki_Tx(payload, sizeof(payload));
 }

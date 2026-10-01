@@ -17,6 +17,13 @@ typedef struct {
 #define CLIFF 6
 #define BUTTON 13
 
+// Truncate speed
+# define SPEED_LIMIT (int16_t)150 // mm / s
+// Kobuki drive forward / backward (+ ve is forward )
+void Kobuki_Drive (int16_t speed) ;
+// Kobuki rotate CW / CCW (+ ve is CCW )
+void Kobuki_Rotate (int16_t speed) ;
+
 // Receive payload
 uint8_t Kobuki_Rx(uint8_t *feedback, uint32_t size_feedback);
 // Transmit payload
