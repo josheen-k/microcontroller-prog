@@ -1,0 +1,3 @@
+/Users/ashlee/Documents/micro/assignment2/build/Debug/CMakeFiles/assignment2.dir
+/Users/ashlee/Documents/micro/assignment2/build/Debug/CMakeFiles/edit_cache.dir
+/Users/ashlee/Documents/micro/assignment2/build/Debug/CMakeFiles/rebuild_cache.dir

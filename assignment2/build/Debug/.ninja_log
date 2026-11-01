@@ -1,0 +1,10 @@
+# ninja log v7
+1	58	1793533762874329018	build.ninja	3a5205313bae69ac
+1	58	1793533762873269016	/Users/ashlee/Documents/micro/assignment2/build/Debug/cmake_install.cmake	3a5205313bae69ac
+2	93	1793533726701184123	CMakeFiles/assignment2.dir/Src/startup_stm32c031xx.S.obj	409fa3026ac30b52
+1	114	1793533726700939123	CMakeFiles/assignment2.dir/Src/main.c.obj	c63106be95aa3a01
+1	115	1793533726700728664	CMakeFiles/assignment2.dir/Src/sysmem.c.obj	1d60984cd03abb6d
+1	130	1793533726700399288	CMakeFiles/assignment2.dir/Src/syscall.c.obj	a304bd7f40f09ddd
+2	150	1793533726702084750	CMakeFiles/assignment2.dir/Src/pwm_helper.c.obj	78522f9d7f9bf01
+2	172	1793533726701780583	CMakeFiles/assignment2.dir/Src/my_stm_helper.c.obj	666ef02a06d0580c
+172	274	1793533726871751903	assignment2.elf	9d74ee6749a0f8ef

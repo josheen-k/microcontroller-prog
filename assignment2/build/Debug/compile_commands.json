@@ -1,0 +1,38 @@
+[
+{
+  "directory": "/Users/ashlee/Documents/micro/assignment2/build/Debug",
+  "command": "\"/Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/arm-none-eabi-gcc\" -DDEBUG -DRTE_DEVICE_STARTUP_STM32C0XX -DSTM32C031xx -I/Users/ashlee/Documents/micro/assignment2/Inc -I/Users/ashlee/Documents/micro/assignment2/Inc/drivers/CMSIS/Core/Include -I/Users/ashlee/Documents/micro/assignment2/Inc/drivers/cmsis_device_c0/Include -fdata-sections -ffunction-sections -Wl,--gc-sections -Wno-comment -mcpu=cortex-m0plus -mlittle-endian -mthumb -std=gnu11 -fstack-usage -Wall -Wextra -Wpedantic -Wno-unused-parameter -O0 -g3 -ggdb -o CMakeFiles/assignment2.dir/Src/syscall.c.obj -c /Users/ashlee/Documents/micro/assignment2/Src/syscall.c",
+  "file": "/Users/ashlee/Documents/micro/assignment2/Src/syscall.c",
+  "output": "/Users/ashlee/Documents/micro/assignment2/build/Debug/CMakeFiles/assignment2.dir/Src/syscall.c.obj"
+},
+{
+  "directory": "/Users/ashlee/Documents/micro/assignment2/build/Debug",
+  "command": "\"/Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/arm-none-eabi-gcc\" -DDEBUG -DRTE_DEVICE_STARTUP_STM32C0XX -DSTM32C031xx -I/Users/ashlee/Documents/micro/assignment2/Inc -I/Users/ashlee/Documents/micro/assignment2/Inc/drivers/CMSIS/Core/Include -I/Users/ashlee/Documents/micro/assignment2/Inc/drivers/cmsis_device_c0/Include -fdata-sections -ffunction-sections -Wl,--gc-sections -Wno-comment -mcpu=cortex-m0plus -mlittle-endian -mthumb -std=gnu11 -fstack-usage -Wall -Wextra -Wpedantic -Wno-unused-parameter -O0 -g3 -ggdb -o CMakeFiles/assignment2.dir/Src/sysmem.c.obj -c /Users/ashlee/Documents/micro/assignment2/Src/sysmem.c",
+  "file": "/Users/ashlee/Documents/micro/assignment2/Src/sysmem.c",
+  "output": "/Users/ashlee/Documents/micro/assignment2/build/Debug/CMakeFiles/assignment2.dir/Src/sysmem.c.obj"
+},
+{
+  "directory": "/Users/ashlee/Documents/micro/assignment2/build/Debug",
+  "command": "\"/Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/arm-none-eabi-gcc\" -DDEBUG -DRTE_DEVICE_STARTUP_STM32C0XX -DSTM32C031xx -I/Users/ashlee/Documents/micro/assignment2/Inc -I/Users/ashlee/Documents/micro/assignment2/Inc/drivers/CMSIS/Core/Include -I/Users/ashlee/Documents/micro/assignment2/Inc/drivers/cmsis_device_c0/Include -fdata-sections -ffunction-sections -Wl,--gc-sections -Wno-comment -mcpu=cortex-m0plus -mlittle-endian -mthumb -std=gnu11 -fstack-usage -Wall -Wextra -Wpedantic -Wno-unused-parameter -O0 -g3 -ggdb -o CMakeFiles/assignment2.dir/Src/main.c.obj -c /Users/ashlee/Documents/micro/assignment2/Src/main.c",
+  "file": "/Users/ashlee/Documents/micro/assignment2/Src/main.c",
+  "output": "/Users/ashlee/Documents/micro/assignment2/build/Debug/CMakeFiles/assignment2.dir/Src/main.c.obj"
+},
+{
+  "directory": "/Users/ashlee/Documents/micro/assignment2/build/Debug",
+  "command": "\"/Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/arm-none-eabi-gcc\" -DDEBUG -DRTE_DEVICE_STARTUP_STM32C0XX -DSTM32C031xx -I/Users/ashlee/Documents/micro/assignment2/Inc -I/Users/ashlee/Documents/micro/assignment2/Inc/drivers/CMSIS/Core/Include -I/Users/ashlee/Documents/micro/assignment2/Inc/drivers/cmsis_device_c0/Include -mcpu=cortex-m0plus -mlittle-endian -mthumb -std=gnu11 -fstack-usage -Wall -Wextra -Wpedantic -Wno-unused-parameter -O0 -g3 -ggdb -x assembler-with-cpp -MMD -MP -o CMakeFiles/assignment2.dir/Src/startup_stm32c031xx.S.obj -c /Users/ashlee/Documents/micro/assignment2/Src/startup_stm32c031xx.S",
+  "file": "/Users/ashlee/Documents/micro/assignment2/Src/startup_stm32c031xx.S",
+  "output": "/Users/ashlee/Documents/micro/assignment2/build/Debug/CMakeFiles/assignment2.dir/Src/startup_stm32c031xx.S.obj"
+},
+{
+  "directory": "/Users/ashlee/Documents/micro/assignment2/build/Debug",
+  "command": "\"/Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/arm-none-eabi-gcc\" -DDEBUG -DRTE_DEVICE_STARTUP_STM32C0XX -DSTM32C031xx -I/Users/ashlee/Documents/micro/assignment2/Inc -I/Users/ashlee/Documents/micro/assignment2/Inc/drivers/CMSIS/Core/Include -I/Users/ashlee/Documents/micro/assignment2/Inc/drivers/cmsis_device_c0/Include -fdata-sections -ffunction-sections -Wl,--gc-sections -Wno-comment -mcpu=cortex-m0plus -mlittle-endian -mthumb -std=gnu11 -fstack-usage -Wall -Wextra -Wpedantic -Wno-unused-parameter -O0 -g3 -ggdb -o CMakeFiles/assignment2.dir/Src/my_stm_helper.c.obj -c /Users/ashlee/Documents/micro/assignment2/Src/my_stm_helper.c",
+  "file": "/Users/ashlee/Documents/micro/assignment2/Src/my_stm_helper.c",
+  "output": "/Users/ashlee/Documents/micro/assignment2/build/Debug/CMakeFiles/assignment2.dir/Src/my_stm_helper.c.obj"
+},
+{
+  "directory": "/Users/ashlee/Documents/micro/assignment2/build/Debug",
+  "command": "\"/Users/ashlee/Library/Application Support/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin/arm-none-eabi-gcc\" -DDEBUG -DRTE_DEVICE_STARTUP_STM32C0XX -DSTM32C031xx -I/Users/ashlee/Documents/micro/assignment2/Inc -I/Users/ashlee/Documents/micro/assignment2/Inc/drivers/CMSIS/Core/Include -I/Users/ashlee/Documents/micro/assignment2/Inc/drivers/cmsis_device_c0/Include -fdata-sections -ffunction-sections -Wl,--gc-sections -Wno-comment -mcpu=cortex-m0plus -mlittle-endian -mthumb -std=gnu11 -fstack-usage -Wall -Wextra -Wpedantic -Wno-unused-parameter -O0 -g3 -ggdb -o CMakeFiles/assignment2.dir/Src/pwm_helper.c.obj -c /Users/ashlee/Documents/micro/assignment2/Src/pwm_helper.c",
+  "file": "/Users/ashlee/Documents/micro/assignment2/Src/pwm_helper.c",
+  "output": "/Users/ashlee/Documents/micro/assignment2/build/Debug/CMakeFiles/assignment2.dir/Src/pwm_helper.c.obj"
+}
+]
