@@ -2,10 +2,12 @@
 #define ULTRASONIC_H
 #include <stdint.h>
 
-#define ULTRASONIC_DETECT_RANGE_MM ((uint16_t) 700U)
-#define ULTRASONIC_MAX_RANGE_MM ((uint16_t) 5000U)
 
-typedef struct {
+#define ULTRASONIC_DETECT_RANGE_MM ((uint16_t)700U)
+#define ULTRASONIC_MAX_RANGE_MM    ((uint16_t)5000U)
+
+typedef struct
+{
     uint8_t detected;
     uint16_t range_mm;
 } US_Typedef;

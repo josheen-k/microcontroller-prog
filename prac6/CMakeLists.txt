@@ -33,6 +33,8 @@ target_sources(${PROJECT_NAME} PRIVATE
   # User defined sources
   Src/G474RE_Drivers/uart.c
   Src/Kobuki_Drivers/kobuki.c
+  Src/ADC_Drivers/adc.c
+  Src/Ultrasonic_Drivers/ultrasonic.c
 )
 
 # Add include directories
@@ -46,6 +48,8 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 
   Src/Kobuki_Drivers
   Src/G474RE_Drivers
+  Src/Ultrasonic_Drivers
+  Src/ADC_Drivers
 )
 
 # Compiler options

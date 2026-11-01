@@ -17,70 +17,322 @@
  ******************************************************************************
  */
 
-#include <stdint.h >
+#include <stdint.h>
+
 #define STM32G474xx
-#include "adc.h " // New Header
-#include "kobuki.h "
-#include "stm32g4xx.h "
+#include "stm32g4xx.h"
 
+#include "adc.h"
+#include "kobuki.h"
 #include "uart.h"
-#include "ultrasonic.h"       // New Header
-#define BUTTON_0_START 0 x01U // Confirm the values from
-#define BUTTON_1_STOP 0 x02U // Confirm the values from
-#define BUTTON_2_ROTATE 0 x04U // Confirm the values from
-#define DRIVE_SPEED_MM_S ((int16_t)100)
-#define ROTATE_SPEED_MM_S ((int16_t)100)
+#include "ultrasonic.h"
 
+/* Kobuki button values. */
+#define BUTTON_0_START 0x01U
+#define BUTTON_1_STOP 0x02U
+#define BUTTON_2_ROTATE 0x02U
+
+/* Motor speeds in mm/s. */
+#define SEARCH_SPEED_MM_S ((int16_t)75)
+#define FORWARD_SPEED_MM_S ((int16_t)100)
+#define REVERSE_SPEED_MM_S ((int16_t)-100)
+#define AVOID_SPEED_MM_S ((int16_t)100)
+
+/*
+ * Approximate delay for the AVOID state.
+ * Adjust this value if the rotation is too short
+ * or too long.
+ */
+#define AVOID_DELAY_COUNT 300000U
+
+typedef enum {
+  IDLE = 0,
+  SEARCH,
+  OBJECT,
+  OBSTACLE,
+  AVOID
+
+} RobotState;
+/* Send a raw Kobuki Base Control command.*/
 static void Send_Kobuki_Move(int16_t speed, int16_t radius) {
   uint8_t payload[6];
-  payload[0] = 0 x01U; /* Base Control sub - packet ID . */
-  payload[1] = 0 x04U; /* Speed and radius occupy four bytes . */
-  payload[2] = (uint8_t)(speed & 0 xFF);
+
+  /* Base Control sub-packet identifier.*/
+  payload[0] = 0x01U;
+
+  /*Speed and radius contain four data bytes.*/
+  payload[1] = 0x04U;
+
+  /* Speed is a signed 16-bit value transmitted little-endian. */
+  payload[2] = (uint8_t)(speed & 0xFF);
   payload[3] = (uint8_t)((uint16_t)speed >> 8);
-  payload[4] = (uint8_t)(radius & 0 xFF);
+
+  /* Radius is also a signed 16-bit value transmitted little-endian.*/
+  payload[4] = (uint8_t)(radius & 0xFF);
   payload[5] = (uint8_t)((uint16_t)radius >> 8);
+
   Kobuki_Tx(payload, sizeof(payload));
 }
+
+/* Blocking delay used during the AVOID state. */
+static void AvoidDelay(void) {
+  for (volatile uint32_t i = 0U; i < AVOID_DELAY_COUNT; ++i) {
+    __NOP();
+  }
+}
+
 int main(void) {
   Kobuki_Typedef my_kobuki = {0};
   US_Typedef ultrasonic_object = {0};
-  uint8_t is_running = 0 U;
-  uint8_t is_rotating = 0 U;
+  RobotState state = IDLE;
+  // initialise state driver
   UART_Init();
   ADC_Init();
   Ultrasonic_Init();
+  // start in a stopped position for safety
   Send_Kobuki_Move(0, 0);
+
   while (1) {
-    /* Control loop completed in Task 12. */
+    /*
+     * Update Kobuki sensor information:
+     * buttons, bumper, cliff, etc.
+     */
+    Kobuki_Read(&my_kobuki);
+    /*
+     * Update ultrasonic range and
+     * object-detection flag.
+     */
+    Ultrasonic_Detect(&ultrasonic_object);
+    /*
+     * Button 1 is the global stop command.
+     * It has priority over every other state/input.
+     */
+    if ((my_kobuki.button & BUTTON_1_STOP) != 0U) {
+      state = IDLE;
+    } else {
+      /*
+       * FSM transition logic.
+       *
+       * This switch decides which state
+       * the robot should enter next.
+       */
+      switch (state) {
+      case IDLE:
+        /*
+         * Remain stopped until
+         * Button 0 is pressed.
+         */
+        if ((my_kobuki.button & BUTTON_0_START) != 0U) {
+          state = SEARCH;
+        }
+        break;
+
+      case SEARCH:
+
+        /*
+         * Rotate while searching.
+         *
+         * When the ultrasonic sensor
+         * detects an object, approach it.
+         */
+        if (ultrasonic_object.detected != 0U) {
+          state = OBJECT;
+        }
+        break;
+
+      case OBJECT:
+        /*
+         * Physical hazards have priority.
+         *
+         * A bumper or cliff event causes
+         * the robot to enter OBSTACLE.
+         */
+        if ((my_kobuki.bumper != 0U) || (my_kobuki.cliff != 0U)) {
+          state = OBSTACLE;
+        }
+
+        /*
+         * If the ultrasonic sensor loses
+         * the object, return to searching.
+         */
+        else if (ultrasonic_object.detected == 0U) {
+          state = SEARCH;
+        }
+
+        break;
+
+      case OBSTACLE:
+
+        /*
+         * Reverse while bumper or cliff
+         * remains active.
+         *
+         * Once BOTH are clear,
+         * enter AVOID.
+         */
+        if ((my_kobuki.bumper == 0U) && (my_kobuki.cliff == 0U)) {
+          state = AVOID;
+        }
+        break;
+
+      case AVOID:
+
+        /*
+         * The actual avoidance movement
+         * occurs in the output switch.
+         */
+        break;
+      default:
+        /*
+         * Fail-safe behaviour if state
+         * contains an unexpected value.
+         */
+        state = IDLE;
+        break;
+      }
+    }
+
+    /*
+     * FSM output logic.
+     *
+     * Exactly one motor action is selected
+     * according to the current state.
+     */
+    switch (state) {
+    case IDLE:
+      /*
+       * Stop robot.
+       */
+      Send_Kobuki_Move(0, 0);
+      break;
+
+    case SEARCH:
+      /*
+       * Rotate counter-clockwise
+       * while searching.
+       */
+      Kobuki_Rotate(SEARCH_SPEED_MM_S);
+
+      break;
+
+    case OBJECT:
+      // drive towards detected object
+      Kobuki_Drive(FORWARD_SPEED_MM_S);
+      break;
+
+    case OBSTACLE:
+      // reverse away from the hazard
+      Kobuki_Drive(REVERSE_SPEED_MM_S);
+      break;
+
+    case AVOID:
+      // rotate away from the hazard
+      Kobuki_Rotate(AVOID_SPEED_MM_S);
+      /*
+       * Continue the avoidance turn
+       * for a fixed period.
+       */
+      AvoidDelay();
+      /*
+       * Resume searching afterward.
+       */
+      state = SEARCH;
+      break;
+
+    default:
+      /*
+       * Safe fallback.
+       */
+      Send_Kobuki_Move(0, 0);
+      state = IDLE;
+      break;
+    }
+    /*
+     * Small control-loop delay.
+     */
+    for (volatile uint32_t i = 0U; i < 5000U; ++i) {
+      __NOP();
+    }
   }
 }
 
-while (1) {
-  Kobuki_Read(&my_kobuki);
-  Ultrasonic_Detect(&ultrasonic_object);
-  /* Button 0 selects forward motion when the path is clear . */
-  if (((my_kobuki.button & BUTTON_0_START) != 0 U) &&
-      (ultrasonic_object.detected == 0 U)) {
-    is_running = 1 U;
-    is_rotating = 0 U;
-  }
-  /* Button 2 selects rotation when the path is clear . */
-  else if (((my_kobuki.button & BUTTON_2_ROTATE) != 0 U) &&
-           (ultrasonic_object.detected == 0 U)) {
-    is_rotating = 1 U;
-    is_running = 0 U;
-  }
-  /* Button 1 , bumper or ultrasonic detection stops the robot .
-   */
-  if (((my_kobuki.button & BUTTON_1_STOP) != 0 U) || (my_kobuki.bumper != 0 U) ||
-      (ultrasonic_object.detected != 0 U)) {
-    is_running = 0 U;
-    is_rotating = 0 U;
-  }
-  if (is_running != 0 U)
-    Kobuki_Drive(100);
-  else if (is_rotating != 0 U)
-    Kobuki_Rotate(100);
-  else
-    Send_Kobuki_Move(0, 0);
-}
+// #include <stdint.h>
+// #define STM32G474xx
+// #include "stm32g4xx.h"
+// #include "adc.h" // New Header
+// #include "kobuki.h"
+
+// #include "uart.h"
+// #include "ultrasonic.h" // New Header
+// #define BUTTON_0_START 0x01U //Comfirm the values from my_kobuki
+// #define BUTTON_1_STOP 0x02U //Comfirm the values from my_kobuki
+// #define BUTTON_2_ROTATE 0x04U //Comfirm the values from my_kobuki
+// #define DRIVE_SPEED_MM_S ((int16_t)100)
+// #define ROTATE_SPEED_MM_S ((int16_t)100)
+// static void Send_Kobuki_Move(int16_t speed, int16_t radius)
+// {
+//     uint8_t payload[6];
+//     payload[0] = 0x01U; /* Base Control sub-packet ID. */
+//     payload[1] = 0x04U; /* Speed and radius occupy four bytes. */
+//     payload[2] = (uint8_t)(speed & 0xFF);
+//     payload[3] = (uint8_t)((uint16_t)speed >> 8);
+//     payload[4] = (uint8_t)(radius & 0xFF);
+//     payload[5] = (uint8_t)((uint16_t)radius >> 8);
+//     Kobuki_Tx(payload, sizeof(payload));
+// }
+
+// static void delay(void) {
+//     for(uint32_t i = 0U; i < 5000; ++i) {
+//         __NOP();
+//     }
+// }
+
+// int main(void)
+// {
+//     Kobuki_Typedef my_kobuki = {0};
+//     US_Typedef ultrasonic_object = {0};
+//     uint8_t is_running = 0U;
+//     uint8_t is_rotating = 0U;
+//     UART_Init();
+//     ADC_Init();
+//     Ultrasonic_Init();
+//     Send_Kobuki_Move(0, 0);
+
+//     while (1)
+//     {
+//         Kobuki_Read(&my_kobuki);
+//         Ultrasonic_Detect(&ultrasonic_object);
+//         /* Button 0 selects forward motion when the path is clear. */
+//         if (((my_kobuki.button & BUTTON_0_START) != 0U) &&
+//         (ultrasonic_object.detected == 0U)) {
+//             is_running = 1U;
+//             is_rotating = 0U;
+//         }
+//         /* Button 2 selects rotation when the path is clear. */
+//         else if (((my_kobuki.button & BUTTON_2_ROTATE) != 0U) &&
+//             (ultrasonic_object.detected == 0U)) {
+//             is_rotating = 1U;
+//             is_running = 0U;
+//         }
+//         /* Button 1, bumper or ultrasonic detection stops the robot.
+//         */
+//         if (((my_kobuki.button & BUTTON_1_STOP) != 0U) ||
+//             (my_kobuki.bumper != 0U) ||
+//             (ultrasonic_object.detected != 0U))
+//             {
+//             is_running = 0U;
+//             is_rotating = 0U;
+//         }
+//         if (is_running != 0U)
+//             Kobuki_Drive(100);
+//         else if (is_rotating != 0U)
+//             Kobuki_Rotate(100);
+//         else
+//             Send_Kobuki_Move(0, 0);
+
+//         for(uint32_t i = 0U; i < 50000; ++i) {
+//             __NOP();
+//         }
+
+//     }
+// }
