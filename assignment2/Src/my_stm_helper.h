@@ -9,7 +9,8 @@ typedef enum {
     GPIOC_BUS, // need for gate 1 pwm pin
     TIM3_BUS,  // need for gate servo pwm timer
     TIM16_BUS,
-    TIM17_BUS
+    TIM17_BUS,
+    I2C1_BUS
 } PeripheralBus_t;
 
 typedef enum {
@@ -46,6 +47,14 @@ bool GPIO_InputReadPin(GPIO_TypeDef *port, uint8_t pin);
 void EXTI_InitPin(EXTIPort_t port, uint8_t pin, EXTITrigger_t trigger, IRQn_Type irq_type);
 
 // routes a pin to one of its alt functions (AF[0-15])
-void GPIO_SetAltFunc(GPIO_TypeDef *port, uint8_t pin, uint8_t af_number);
+void GPIO_SetAltFcn(GPIO_TypeDef *port, uint8_t pin, uint8_t af_number);
+
+void TIM3_PWM1_Init(uint8_t ch, uint32_t duty_us);
+void TIM3_PWM_SetPulse(uint8_t ch, uint16_t duty_us);
+
+bool check_timeout(uint16_t start_tick, uint16_t timeout_ms);
+void I2C_Master_Init(I2C_TypeDef *i2c, uint8_t presc, uint8_t sclh, uint8_t scll);
+bool I2C_Master_WriteReg(I2C_TypeDef *i2c, uint8_t dev_addr, uint8_t reg_addr, uint8_t data);
+bool I2C_Master_ReadRegs(I2C_TypeDef *i2c, uint8_t dev_addr, uint8_t reg_addr, uint8_t *rx_buf, uint16_t size);
 
 #endif // DRIVERS_H
