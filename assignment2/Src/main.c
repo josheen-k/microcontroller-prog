@@ -46,9 +46,7 @@ void TIM17_IRQHandler(void) {
 void State_Update(State_t *state, float mag, float comp_in, float clamp_in, float comp_out, float free_out) {
     switch (*state) {
         case STATE_FREE:
-            if (mag >= clamp_in) {
-                *state = STATE_CLAMPED; // jumped straight past compliant
-            } else if (mag >= comp_in) {
+            if (mag >= comp_in) {
                 *state = STATE_COMPLIANT;
             }
             break;
