@@ -17,9 +17,128 @@
  */
 
 #include <stdint.h>
+#include "my_stm_helper.h"
+#include <math.h>
 
-int main(void)
-{
-    /* Loop forever */
-	for(;;);
+// mpu
+#define MPU_ADDR 0x68 // 7-bit address (AD0 low)
+#define REG_PWR_MGMT_1 0x6B // Power management register (write 0 to wake)
+#define REG_ACCEL_XOUT_H 0x3B // First of 6 accelerometer data bytes
+#define ACCEL_SENS 16384.0f // LSB per g at the default +/-2 g range
+#define RAD_TO_DEG 57.2957795f // Convert radians to degrees
+
+// servo pulse width
+#define SERVO_PULSE_MIN 500 // 0 deg
+#define SERVO_PULSE_MAX 2500 // 180 deg
+
+// pin allocation
+#define SERVO_ROLL 1 // PB4, TIM3_CH1
+#define SERVO_PITCH 2 // PB5, TIM3_CH2
+#define SERVO_TILT 3 // PB0, TIM3_CH3
+#define LED_AUTO 2 // PA2, autopilot led
+#define LED_MANUAL 11 // PB11, manual led
+#define AUTO_BUTTON 12 // PA12, autopilot button, pulldown
+
+volatile bool tick_flag = false; // set every 20ms by TIM17
+
+// TIM17 only raises a flag
+void TIM17_IRQHandler(void) {
+    if (TIM17->SR & (1<<0)) {
+        TIM17->SR &= ~(1<<0);
+        tick_flag = true; // tell main loop that a new cycle is due
+    }
+}
+
+// convert a servo angle in deg to pulse width in us (micro sec)
+uint16_t Angle_To_Pulse(float angle_deg) {
+    if (angle_deg < 0.0f) {
+        angle_deg = 0.0f;
+    }
+    if (angle_deg > 180.0f) {
+        angle_deg = 180.0f;
+    }
+    return (uint16_t)(SERVO_PULSE_MIN + angle_deg* (SERVO_PULSE_MAX - SERVO_PULSE_MIN)/180.0f);
+}
+
+// reads 3 accelometr axis in g, returns false if i2c read failed
+bool Read_Accel(float *ax, float *ay, float *az) {
+    uint8_t buf[6];
+    if (!I2C_Master_ReadRegs(I2C1, MPU_ADDR, REG_ACCEL_XOUT_H, buf, 6)) {
+        return false;
+    }
+    *ax = (int16_t)((buf[0] << 8) | buf[1]) / ACCEL_SENS;
+    *ay = (int16_t)((buf[2] << 8) | buf[3]) / ACCEL_SENS;
+    *az = (int16_t)((buf[4] << 8) | buf[5]) / ACCEL_SENS;
+    return true;
+}
+
+// roll, pitch and tilt angle, all in degrees
+void Calc_Angles(float ax, float ay, float az, float *roll, float *pitch, float *tilt) {
+    *roll  = atan2f(ay, az) * RAD_TO_DEG; 
+    *pitch = atan2f(-ax, sqrtf(ay*ay + az*az)) * RAD_TO_DEG;
+    *tilt  = sqrtf((*pitch) * (*pitch) + (*roll) * (*roll));
+}
+
+int main(void) {
+    // enable clocks
+    Clock_Enable(GPIOA_BUS);
+    Clock_Enable(GPIOB_BUS);
+    Clock_Enable(TIM3_BUS); // servo pwm
+    Clock_Enable(TIM16_BUS); // i2c timeout clock
+    Clock_Enable(TIM17_BUS); // 20ms control loop tick
+    Clock_Enable(I2C1_BUS);
+
+    // i2c pins: PB8=SCL, PB9=SDA, af no.6 
+    GPIO_InitPin(GPIOB, 8, ALT, NONE);
+    GPIO_SetAltFcn(GPIOB, 8, 6);
+    GPIO_InitPin(GPIOB, 9, ALT, NONE);
+    GPIO_SetAltFcn(GPIOB, 9, 6);
+
+    // servo pins on TIM3 , af1
+    GPIO_InitPin(GPIOB, 4, ALT, NONE);  
+    GPIO_SetAltFcn(GPIOB, 4, 1); // roll (CH1)
+    GPIO_InitPin(GPIOB, 5, ALT, NONE);
+    GPIO_SetAltFcn(GPIOB, 5, 1); // pitch(CH2)
+    GPIO_InitPin(GPIOB, 0, ALT, NONE);
+    GPIO_SetAltFcn(GPIOB, 0, 1); // tilt (CH3)
+
+    // leds and buytton
+    GPIO_InitPin(GPIOA, LED_AUTO, OUTPUT, NONE);
+    GPIO_InitPin(GPIOB, LED_MANUAL, OUTPUT, NONE);
+    GPIO_InitPin(GPIOA, AUTO_BUTTON, INPUT, PULL_DOWN);
+    GPIO_OutputClearPin(GPIOA, LED_AUTO);
+    GPIO_OutputSetPin(GPIOB, LED_MANUAL); //start in manual
+
+    // timers
+    Timer_Init(TIM16, TIM16_IRQn, 47999, 0xFFFF, false); // 1us tick for i2c timeouts
+    Timer_Init(TIM3, TIM3_IRQn, 47, 19999, false); // 1 mhz tick, 20us period= 50hz pwm
+    TIM3_PWM1_Init(SERVO_ROLL,  Angle_To_Pulse(90.0f)); // roll neutral 90deg
+    TIM3_PWM1_Init(SERVO_PITCH, Angle_To_Pulse(90.0f)); // pitch neutral 90deg
+    TIM3_PWM1_Init(SERVO_TILT,  Angle_To_Pulse(0.0f)); // tilt neutral 0deg
+
+    // I2C: 100khz (presc=11, sclh = scll =19), then wake mpu
+    I2C_Master_Init(I2C1, 11, 19, 19);
+    I2C_Master_WriteReg(I2C1, MPU_ADDR, REG_PWR_MGMT_1, 0x00);
+
+    // 20ms control loop tick: PSC=47999 (1ms), ARR=19 (20 tciks)
+    Timer_Init(TIM17, TIM17_IRQn, 47999, 19, true);
+
+    float ax, ay, az, roll, pitch, tilt;
+
+    while (1) {
+        while (!tick_flag); // wait for the 20 ms tick
+        tick_flag = false;
+
+        if (!Read_Accel(&ax, &ay, &az)) {
+            I2C1->CR1 &= ~(1<<0);// read failed: reset i2c
+            I2C1->CR1 |=  (1<<0);
+            continue; // skip this cycle
+        }
+        Calc_Angles(ax, ay, az, &roll, &pitch, &tilt);
+
+        // TEST ONLY: send raw angles to the servos (will replace by fsm)
+        TIM3_PWM_SetPulse(SERVO_ROLL,  Angle_To_Pulse(90.0f-roll));
+        TIM3_PWM_SetPulse(SERVO_PITCH, Angle_To_Pulse(90.0f-pitch));
+        TIM3_PWM_SetPulse(SERVO_TILT,  Angle_To_Pulse(2.0f*tilt));
+    }
 }

@@ -32,7 +32,6 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/files.cmake)
 target_sources(${PROJECT_NAME} PRIVATE
   # User defined sources
   Src/my_stm_helper.c
-  Src/pwm_helper.c
 )
 
 # Add include directories
@@ -66,6 +65,7 @@ target_link_directories(${PROJECT_NAME} PRIVATE
 # Add additional linker libraries
 target_link_libraries(${PROJECT_NAME} PRIVATE
   # Add additional linker libraries here
+  m
 )
 
 add_custom_command(TARGET ${CMAKE_PROJECT_NAME} POST_BUILD
