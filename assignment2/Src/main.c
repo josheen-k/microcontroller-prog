@@ -39,6 +39,23 @@
 #define LED_MANUAL 11 // PB11, manual led
 #define AUTO_BUTTON 12 // PA12, autopilot button, pulldown
 
+// state thresholds in deg (entry = going up, exit = coming down, 5deg deadband)
+// roll and pitch
+#define AXIS_COMPLIANT_IN 30.0f // free->compliant when angle >=30
+#define AXIS_CLAMPED_IN 50.0f // compliant->clamped when angl >=50
+#define AXIS_COMPLIANT_OUT 45.0f // clamped->compliant when angle<45
+#define AXIS_FREE_OUT 25.0f // compliant->free when angle< 25
+// tilt
+#define TILT_COMPLIANT_IN 20.0f // free->compliant when tilt >=20
+#define TILT_CLAMPED_IN 70.0f // compliant->clamped when tilt >=70
+#define TILT_COMPLIANT_OUT 65.0f // clamped->compliant when til <65
+#define TILT_FREE_OUT 15.0f // compliant->free when tilt <15
+
+// 3 states used by roll, pitch and tilt fsms
+typedef enum { 
+    STATE_FREE, STATE_COMPLIANT, STATE_CLAMPED 
+} State_t;
+
 volatile bool tick_flag = false; // set every 20ms by TIM17
 
 // TIM17 only raises a flag
@@ -79,6 +96,67 @@ void Calc_Angles(float ax, float ay, float az, float *roll, float *pitch, float 
     *tilt  = sqrtf((*pitch) * (*pitch) + (*roll) * (*roll));
 }
 
+// simple fsm for all 3 states used for roll, pitch and tilt
+// mag=|angle| in deg, *state is updated in place
+void State_Update(State_t *state, float mag, float comp_in, float clamp_in, float comp_out, float free_out) {
+    switch (*state) {
+        case STATE_FREE:
+            if (mag >= clamp_in) {
+                *state = STATE_CLAMPED; // jumped straight past compliant
+            } else if (mag >= comp_in) {
+                *state = STATE_COMPLIANT;
+            }
+            break;
+
+        case STATE_COMPLIANT:
+            if (mag >= clamp_in) {
+                *state = STATE_CLAMPED;
+            }
+            else if (mag < free_out) {
+                *state = STATE_FREE;
+            }
+            break;
+
+        case STATE_CLAMPED:
+            if (mag < comp_out) {
+                *state = STATE_COMPLIANT; // must fall below exit thresh to leave
+            }
+            break;
+    }
+}
+
+// servo angle (deg) for roll or pitch from its state
+// servo=90-angle because clockwise = increasing servo angle (from fig 1 breif)
+float Axis_Servo_Angle(State_t state, float angle) {
+    switch (state) {
+        case STATE_FREE:
+            return 90.0f; // centred
+
+        case STATE_COMPLIANT: 
+            return 90.0f - angle; // follows the stick
+
+        default: 
+            // clamped at 90 -/+ 50
+            if (angle >= 0) {
+                return 40.0f;
+            } else {
+                return 140.0f;
+            }
+    }
+}
+
+// servo angle (deg) for tilt from its state, tilt is always >= 0
+float Tilt_Servo_Angle(State_t state, float tilt) {
+    switch (state) {
+        case STATE_FREE:
+            return 0.0f;
+        case STATE_COMPLIANT: 
+            return 2.0f * tilt;// x2 tilt
+        default:
+            return 140.0f; // clamped
+    }
+}
+
 int main(void) {
     // enable clocks
     Clock_Enable(GPIOA_BUS);
@@ -110,11 +188,11 @@ int main(void) {
     GPIO_OutputSetPin(GPIOB, LED_MANUAL); //start in manual
 
     // timers
-    Timer_Init(TIM16, TIM16_IRQn, 47999, 0xFFFF, false); // 1us tick for i2c timeouts
-    Timer_Init(TIM3, TIM3_IRQn, 47, 19999, false); // 1 mhz tick, 20us period= 50hz pwm
-    TIM3_PWM1_Init(SERVO_ROLL,  Angle_To_Pulse(90.0f)); // roll neutral 90deg
+    Timer_Init(TIM16, TIM16_IRQn, 47999, 0xFFFF, false); // 1ms tick for i2c timeouts
+    Timer_Init(TIM3, TIM3_IRQn, 47, 19999, false); // 1 mhz tick, 20ms period= 50hz pwm
+    TIM3_PWM1_Init(SERVO_ROLL, Angle_To_Pulse(90.0f)); // roll neutral 90deg
     TIM3_PWM1_Init(SERVO_PITCH, Angle_To_Pulse(90.0f)); // pitch neutral 90deg
-    TIM3_PWM1_Init(SERVO_TILT,  Angle_To_Pulse(0.0f)); // tilt neutral 0deg
+    TIM3_PWM1_Init(SERVO_TILT, Angle_To_Pulse(0.0f)); // tilt neutral 0deg
 
     // I2C: 100khz (presc=11, sclh = scll =19), then wake mpu
     I2C_Master_Init(I2C1, 11, 19, 19);
@@ -124,6 +202,12 @@ int main(void) {
     Timer_Init(TIM17, TIM17_IRQn, 47999, 19, true);
 
     float ax, ay, az, roll, pitch, tilt;
+    float abs_roll, abs_pitch; // abs values for the state fsms
+
+    // all three fsms start in the free state
+    State_t roll_state = STATE_FREE;
+    State_t pitch_state= STATE_FREE;
+    State_t tilt_state = STATE_FREE;
 
     while (1) {
         while (!tick_flag); // wait for the 20 ms tick
@@ -136,9 +220,24 @@ int main(void) {
         }
         Calc_Angles(ax, ay, az, &roll, &pitch, &tilt);
 
-        // TEST ONLY: send raw angles to the servos (will replace by fsm)
-        TIM3_PWM_SetPulse(SERVO_ROLL,  Angle_To_Pulse(90.0f-roll));
-        TIM3_PWM_SetPulse(SERVO_PITCH, Angle_To_Pulse(90.0f-pitch));
-        TIM3_PWM_SetPulse(SERVO_TILT,  Angle_To_Pulse(2.0f*tilt));
+        // abs value of roll and pitch 
+        abs_roll = roll;
+        if (abs_roll < 0.0f) {
+            abs_roll = -abs_roll;
+        }
+        abs_pitch = pitch;
+        if (abs_pitch < 0.0f) {
+            abs_pitch = -abs_pitch;
+        }
+
+        // update the roll, pitch and tilt state fsms
+        State_Update(&roll_state, abs_roll, AXIS_COMPLIANT_IN, AXIS_CLAMPED_IN, AXIS_COMPLIANT_OUT, AXIS_FREE_OUT);
+        State_Update(&pitch_state, abs_pitch, AXIS_COMPLIANT_IN, AXIS_CLAMPED_IN, AXIS_COMPLIANT_OUT, AXIS_FREE_OUT);
+        State_Update(&tilt_state, tilt, TILT_COMPLIANT_IN, TILT_CLAMPED_IN, TILT_COMPLIANT_OUT, TILT_FREE_OUT);
+
+        // drive the servos from the fsm outputs
+        TIM3_PWM_SetPulse(SERVO_ROLL,  Angle_To_Pulse(Axis_Servo_Angle(roll_state,  roll)));
+        TIM3_PWM_SetPulse(SERVO_PITCH, Angle_To_Pulse(Axis_Servo_Angle(pitch_state, pitch)));
+        TIM3_PWM_SetPulse(SERVO_TILT,  Angle_To_Pulse(Tilt_Servo_Angle(tilt_state,  tilt)));
     }
 }
