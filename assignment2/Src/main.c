@@ -56,6 +56,12 @@ typedef enum {
     STATE_FREE, STATE_COMPLIANT, STATE_CLAMPED 
 } State_t;
 
+// 2 operating modes
+typedef enum {
+    MODE_MANUAL, 
+    MODE_AUTOPILOT
+} Mode_t;
+
 volatile bool tick_flag = false; // set every 20ms by TIM17
 
 // TIM17 only raises a flag
@@ -157,6 +163,26 @@ float Tilt_Servo_Angle(State_t state, float tilt) {
     }
 }
 
+// mode fsm: manual, autopilot
+// button_pressed is true for ONE cycle only (rising edge of the button)
+void Mode_Update(Mode_t *mode, bool btn_pressed, State_t roll_state, State_t pitch_state) {
+    switch (*mode) {
+        case MODE_MANUAL:
+            // button pressed or both roll and pitch clamped, hand over to autopilot
+            if (btn_pressed || (roll_state == STATE_CLAMPED && pitch_state == STATE_CLAMPED)) {
+                *mode = MODE_AUTOPILOT;
+            }
+            break;
+
+        case MODE_AUTOPILOT:
+            // pilot can only take back control if button pressed AND roll and pitch both free
+            if (btn_pressed && roll_state == STATE_FREE && pitch_state == STATE_FREE) {
+                *mode = MODE_MANUAL;
+            }
+            break;
+    }
+}
+
 int main(void) {
     // enable clocks
     Clock_Enable(GPIOA_BUS);
@@ -209,6 +235,12 @@ int main(void) {
     State_t pitch_state= STATE_FREE;
     State_t tilt_state = STATE_FREE;
 
+    // mode fsm starts in manual, btn edge detection
+    Mode_t mode = MODE_MANUAL;
+    bool btn_now;
+    bool btn_prev = false;
+    bool btn_pressed;
+
     while (1) {
         while (!tick_flag); // wait for the 20 ms tick
         tick_flag = false;
@@ -234,6 +266,23 @@ int main(void) {
         State_Update(&roll_state, abs_roll, AXIS_COMPLIANT_IN, AXIS_CLAMPED_IN, AXIS_COMPLIANT_OUT, AXIS_FREE_OUT);
         State_Update(&pitch_state, abs_pitch, AXIS_COMPLIANT_IN, AXIS_CLAMPED_IN, AXIS_COMPLIANT_OUT, AXIS_FREE_OUT);
         State_Update(&tilt_state, tilt, TILT_COMPLIANT_IN, TILT_CLAMPED_IN, TILT_COMPLIANT_OUT, TILT_FREE_OUT);
+
+        // btn rising edge: pressed now but not on prev cycle (20ms sample also debounces)
+        btn_now = GPIO_InputReadPin(GPIOA, AUTO_BUTTON);
+        btn_pressed = btn_now && !btn_prev;
+        btn_prev = btn_now;
+
+        // update mode fsm using this cycle's roll and pitch states
+        Mode_Update(&mode, btn_pressed, roll_state, pitch_state);
+
+        // leds show the current mode
+        if (mode == MODE_AUTOPILOT) {
+            GPIO_OutputSetPin(GPIOA, LED_AUTO);
+            GPIO_OutputClearPin(GPIOB, LED_MANUAL);
+        } else {
+            GPIO_OutputClearPin(GPIOA, LED_AUTO);
+            GPIO_OutputSetPin(GPIOB, LED_MANUAL);
+        }
 
         // drive the servos from the fsm outputs
         TIM3_PWM_SetPulse(SERVO_ROLL,  Angle_To_Pulse(Axis_Servo_Angle(roll_state,  roll)));
