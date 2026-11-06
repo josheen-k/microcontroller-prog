@@ -10,7 +10,7 @@
 "cwd": "/Users/ashlee/Documents/micro/assignment2",
 "MIMode": "gdb",
 "miDebuggerPath": "/Users/ashlee/Documents/micro/arm-none-eabi-gdb",
-"miDebuggerServerAddress": "127.0.0.1:3333"
+"miDebuggerServerAddress": "3333"
 }
 ]
 }

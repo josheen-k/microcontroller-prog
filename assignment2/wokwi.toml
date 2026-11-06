@@ -1,5 +1,5 @@
 [wokwi]
 version = 1
-firmware = 'build/Debug/assignment2.bin'
+firmware = 'build/Debug/assignment2.elf'
 elf = 'build/Debug/assignment2.elf'
 gdbServerPort = 3333
